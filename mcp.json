@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "suitedash": {
+      "type": "streamable-http",
+      "url": "https://app.suitedash.com/mcp"
+    }
+  }
+}

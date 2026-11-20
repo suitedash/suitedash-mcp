@@ -1,0 +1,10 @@
+{
+  "name": "suitedash",
+  "version": "1.0.1",
+  "description": "Official SuiteDash server: contacts, deals, projects, tasks, time, invoices, proposals and reports.",
+  "mcpServers": {
+    "suitedash": {
+      "httpUrl": "https://app.suitedash.com/mcp"
+    }
+  }
+}

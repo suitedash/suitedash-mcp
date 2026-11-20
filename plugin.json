@@ -1,0 +1,15 @@
+{
+  "name": "suitedash",
+  "version": "1.0.1",
+  "description": "Official SuiteDash server: contacts, deals, projects, tasks, time, invoices, proposals and reports, over OAuth.",
+  "author": {
+    "name": "SuiteDash",
+    "email": "help@suitedash.com",
+    "url": "https://suitedash.com/"
+  },
+  "homepage": "https://suitedash.com/mcp-connector/",
+  "repository": "https://github.com/suitedash/suitedash-mcp",
+  "license": "MIT",
+  "keywords": ["suitedash", "crm", "client-portal", "project-management", "mcp", "oauth"],
+  "skills": "skills"
+}
