@@ -78,7 +78,7 @@ Turning a role's access off disconnects the A.I. apps of everyone following that
 
 Staff with access connect from **My Account > Connections**. The **Connected A.I. Apps** card shows the steps, your MCP Address with a Copy button, and a Setup Prompt for coding assistants. The card only shows up once MCP Access is on for you.
 
-If your portal runs on your own web address, your MCP Address is that address followed by `/mcp`, for example `https://portal.yourbusiness.com/mcp`. Use the address from your own Connected A.I. Apps card. An address belonging to another account won't connect, even if you can sign in there.
+If your portal runs on your own web address, your MCP Address is that address followed by `/mcp`, for example `https://portal.yourcompany.com/mcp`. Use the address from your own Connected A.I. Apps card. An address belonging to another account won't connect, even if you can sign in there.
 
 Tip: set up your Custom URL before you connect. Changing your portal's address later disconnects every A.I. app connected to it.
 

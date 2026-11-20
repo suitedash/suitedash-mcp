@@ -12,7 +12,7 @@ Steps for an A.I. coding agent (Cline, Claude Code, Codex, Cursor and others) ad
    https://app.suitedash.com/mcp
    ```
 
-   If the user's portal runs on its own web address, use that address followed by `/mcp` instead (for example `https://portal.yourbusiness.com/mcp`). The user can copy the right address from **My Account > Connections**, on the Connected A.I. Apps card.
+   If the user's portal runs on its own web address, use that address followed by `/mcp` instead (for example `https://portal.yourcompany.com/mcp`). The user can copy the right address from **My Account > Connections**, on the Connected A.I. Apps card.
 4. Don't add an API key, bearer token or Authorization header. Sign-in is OAuth, and the client handles it.
 5. Ask the user to sign in with their normal SuiteDash login and press **Allow**.
 
