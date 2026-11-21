@@ -3,8 +3,24 @@
   "name": "com.suitedash/suitedash",
   "title": "SuiteDash (Official)",
   "description": "Official SuiteDash server: contacts, deals, projects, tasks, time, invoices, proposals and reports.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "websiteUrl": "https://suitedash.com/mcp-connector/",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/suitedash/suitedash-mcp/main/assets/logo.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    },
+    {
+      "src": "https://raw.githubusercontent.com/suitedash/suitedash-mcp/main/assets/icon-256.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "256x256"
+      ]
+    }
+  ],
   "repository": {
     "url": "https://github.com/suitedash/suitedash-mcp",
     "source": "github"
