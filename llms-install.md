@@ -33,6 +33,10 @@ Example config for clients that read `mcpServers`:
 - The account needs the A.I. Service or an active A.I. Connection.
 - No account yet? Start a 30-day free trial, no credit card required, at https://suitedash.com/free-trial/.
 
+## Tools
+
+The client loads the live tool list when it connects. The full list, with what each Tool does, is in TOOLS.md: https://github.com/suitedash/suitedash-mcp/blob/main/TOOLS.md
+
 ## Troubleshooting
 
 - **Connected, but no tools appear.** The account needs the A.I. Service or an active A.I. Connection. Ask an administrator to add one, then reconnect. Also check that MCP Access is on for the user in **A.I. Studio > MCP Access**.

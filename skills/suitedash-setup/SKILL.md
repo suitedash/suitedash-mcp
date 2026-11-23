@@ -40,7 +40,7 @@ Add a remote Streamable HTTP MCP server with only the address. No Authorization 
 - "Add a new lead for Acme Co. with Jane Doe as the primary contact."
 - "Which invoices are still unpaid?"
 
-Only use Tools that show up in the live tool list. Each person sees only the Tools switched on for them that their plan includes.
+Only use Tools that show up in the live tool list. Each person sees only the Tools switched on for them that their plan includes. The full list, with what each Tool does, is in TOOLS.md: https://github.com/suitedash/suitedash-mcp/blob/main/TOOLS.md
 
 ## How changes work
 
