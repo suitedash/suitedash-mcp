@@ -123,7 +123,7 @@ const reads = tools.filter((t) => t.annotations.readOnlyHint).length;
 const changes = tools.length - reads;
 const asksCount = tools.filter((t) => !t.annotations.readOnlyHint && ASKS.test(t.description)).length;
 const floor = Math.floor(tools.length / 10) * 10;
-const count = floor === tools.length ? `${floor} tools` : `More than ${floor} tools`;
+const count = floor === tools.length || floor === 0 ? `${tools.length} tools` : `More than ${floor} tools`;
 
 const lines = [
   '# SuiteDash MCP tools',
