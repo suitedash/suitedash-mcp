@@ -1,0 +1,4 @@
+{
+  "comment": "Exact phrases that trip the safety check in build-tools-md.mjs but are fine to publish. Each entry names one tool and the exact text, for example {\"tool\": \"add_note\", \"text\": \"internal note\"}. That text is removed from the tool's fields before the checks run, so the rest of the field is still checked.",
+  "allow": []
+}
