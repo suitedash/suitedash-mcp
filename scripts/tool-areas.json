@@ -1,0 +1,22 @@
+{
+  "comment": "Groups tools into areas for TOOLS.md. names pins one tool to an area; otherwise the first entry in areas whose pattern matches the tool name wins, so that list is in matching order. A tool nothing matches goes under Other. display is the order the areas appear in TOOLS.md.",
+  "display": ["CRM", "Deals", "Projects and tasks", "Time tracking", "Invoicing and payments", "Expenses", "Reports", "Staff and teams", "Skills", "Messaging", "Branding"],
+  "names": {
+    "apply_auto_template": "CRM",
+    "link_text_number_to_contact": "Messaging",
+    "remove_branding_template": "Branding"
+  },
+  "areas": [
+    { "area": "Reports", "patterns": ["^run_.*_report$"] },
+    { "area": "Skills", "patterns": ["skill"] },
+    { "area": "Deals", "patterns": ["deal"] },
+    { "area": "Projects and tasks", "patterns": ["work_request", "project", "task"] },
+    { "area": "Time tracking", "patterns": ["timer", "time_entry", "^log_time$"] },
+    { "area": "Expenses", "patterns": ["expense"] },
+    { "area": "Invoicing and payments", "patterns": ["invoice", "estimate", "proposal", "payment", "subscription", "balance", "_item$", "sales_room"] },
+    { "area": "CRM", "patterns": ["contact", "company", "circle", "note", "follow_up", "portal_invite"] },
+    { "area": "Staff and teams", "patterns": ["staff", "colleague", "team"] },
+    { "area": "Messaging", "patterns": ["text_number", "message", "sms"] },
+    { "area": "Branding", "patterns": ["branding"] }
+  ]
+}

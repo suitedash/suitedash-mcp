@@ -24,6 +24,8 @@ Files in here:
 | `plugin.json`, `.cursor-plugin/plugin.json` | Plugin manifests (Cursor and others) |
 | `skills/suitedash-setup/SKILL.md` | A setup skill your A.I. assistant can follow |
 | `llms-install.md` | Short install steps for A.I. coding agents |
+| `TOOLS.md` | The full tool list, generated from the server's tool definitions |
+| `data/tools.json`, `scripts/` | The public tool data and the script that builds `TOOLS.md` from it |
 | `assets/` | Logo files |
 
 ## What you can do
@@ -36,7 +38,9 @@ Just ask in plain words. A few to try:
 - "What Skills does my account have? Run the Lead Follow-up skill for Jane Doe."
 - "Which invoices are still unpaid?"
 
-Your app gets about 160 Tools, each one doing what a screen in your portal does:
+## Tools
+
+About 160 tools across 25+ toolkits. The full list is in [TOOLS.md](TOOLS.md), and your app always loads the live list when it connects. Each Tool does what a screen in your portal does:
 
 | Area | What it covers |
 |---|---|

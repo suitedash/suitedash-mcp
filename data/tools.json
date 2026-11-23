@@ -1,0 +1,1953 @@
+{
+  "serverVersion": "1.0.2",
+  "protocolVersions": [
+    "2025-06-18",
+    "2025-03-26"
+  ],
+  "tools": [
+    {
+      "name": "add_contact_tag",
+      "title": "Add Contact Tag",
+      "description": "Asks the person to confirm in the app before it acts. Give a contact one or more tags by name, keeping the tags it has; a tag the account lacks is made.",
+      "annotations": {
+        "title": "Add Contact Tag",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "add_contact_to_circle",
+      "title": "Add Contact to Circle",
+      "description": "Asks the person to confirm in the app before it acts. Add a client or prospect to a circle; they gain its portal access and are emailed its shared files.",
+      "annotations": {
+        "title": "Add Contact to Circle",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "add_staff_to_team",
+      "title": "Add Staff to Team",
+      "description": "Asks the person to confirm in the app before it acts. Add one colleague to a team, by the ids find_team and find_colleague give. They gain what the team can reach.",
+      "annotations": {
+        "title": "Add Staff to Team",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "add_subtask",
+      "title": "Add Subtask",
+      "description": "Asks the person to confirm in the app before it acts. Add a subtask (a checklist step) under a task named by its title or id; it goes to that task's assignee.",
+      "annotations": {
+        "title": "Add Subtask",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "add_time_entry",
+      "title": "Add Time Entry",
+      "description": "Asks the person to confirm in the app before it acts. Add a stretch to a timer, finished or billed too; start and end are required, and a running timer is refused.",
+      "annotations": {
+        "title": "Add Time Entry",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "adjust_client_balance",
+      "title": "Adjust Client Balance",
+      "description": "Asks the person to confirm in the app before it acts. Top up, take away from or set a client's prepaid balance (credit, hours, sessions), by the id read_client_balance gives.",
+      "annotations": {
+        "title": "Adjust Client Balance",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "apply_auto_template",
+      "title": "Apply Auto-Template to Record",
+      "description": "Asks the person to confirm in the app before it acts. Apply the Auto-Template an Auto-Decision Skill chose to a contact or company, only once the person has said yes.",
+      "annotations": {
+        "title": "Apply Auto-Template to Record",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "apply_project_template",
+      "title": "Apply Task Template to Project",
+      "description": "Asks the person to confirm in the app before it acts. Apply one of the account's task templates to a project, dated from a chosen day.",
+      "annotations": {
+        "title": "Apply Task Template to Project",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "archive_project",
+      "title": "Archive Project",
+      "description": "Asks the person to confirm in the app before it acts. Archive a project off the Projects list; restore_project brings it back.",
+      "annotations": {
+        "title": "Archive Project",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "archive_work_request",
+      "title": "Archive Work Request",
+      "description": "Asks the person to confirm in the app before it acts. Archive a client's work request, moving it off the Work Requests list; restore_work_request brings it back.",
+      "annotations": {
+        "title": "Archive Work Request",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "bill_expense",
+      "title": "Bill Expense",
+      "description": "Asks the person to confirm in the app before it acts. Bill an unbilled expense to its client on a new draft invoice, never sent; it marks the expense Invoiced.",
+      "annotations": {
+        "title": "Bill Expense",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "bill_task",
+      "title": "Bill Task",
+      "description": "Asks the person to confirm in the app before it acts. Bill a task onto a new or draft invoice or accumulating generator as a $0.00 line; takes no amount or due date.",
+      "annotations": {
+        "title": "Bill Task",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "bill_timer",
+      "title": "Bill Timer",
+      "description": "Asks the person to confirm in the app before it acts. Bill the stretches preview_timer_billing priced, its priced value repeated; bills nothing if anything changed.",
+      "annotations": {
+        "title": "Bill Timer",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "cancel_subscription",
+      "title": "Cancel Subscription",
+      "description": "Asks the person to confirm in the app before it acts. Cancel a subscription for good: it can email the client, fire the webhook and end paid and course access.",
+      "annotations": {
+        "title": "Cancel Subscription",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "claim_contact",
+      "title": "Claim Contact",
+      "description": "Asks the person to confirm in the app before it acts. Claim for the salesperson asking a contact or company nobody holds, as Claim on the CRM screen does.",
+      "annotations": {
+        "title": "Claim Contact",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "close_deal",
+      "title": "Close Deal",
+      "description": "Asks the person to confirm in the app before it acts. Close a deal as won or lost, marking the sale won or the opportunity lost.",
+      "annotations": {
+        "title": "Close Deal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "comment_on_task",
+      "title": "Comment on Task",
+      "description": "Asks the person to confirm in the app before it acts. Post a comment on a task, named by its title or id; its assignee and followers are told.",
+      "annotations": {
+        "title": "Comment on Task",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "convert_contact",
+      "title": "Convert Contact",
+      "description": "Asks the person to confirm in the app before it acts. Move a lead to prospect or client, or a prospect to client, as Convert on the CRM screen does; it gets a portal login.",
+      "annotations": {
+        "title": "Convert Contact",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "convert_work_request_to_estimate",
+      "title": "Convert Work Request to Estimate",
+      "description": "Asks the person to confirm in the app before it acts. Convert a work request into a new or existing estimate or quote; items become lines and the client is emailed.",
+      "annotations": {
+        "title": "Convert Work Request to Estimate",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "convert_work_request_to_invoice",
+      "title": "Convert Work Request to Invoice",
+      "description": "Asks the person to confirm in the app before it acts. Convert a work request into a new or existing invoice; items become lines and the client is emailed a link.",
+      "annotations": {
+        "title": "Convert Work Request to Invoice",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "convert_work_request_to_project",
+      "title": "Convert Work Request to Project",
+      "description": "Asks the person to confirm in the app before it acts. Convert a work request into a new or existing project; items become tasks and the client is emailed a link.",
+      "annotations": {
+        "title": "Convert Work Request to Project",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_circle",
+      "title": "Create Circle",
+      "description": "Create a circle with a name, an optional description and an optional color. It starts with no members.",
+      "annotations": {
+        "title": "Create Circle",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "create_company",
+      "title": "Create Company",
+      "description": "Asks the person to confirm in the app before it acts. Add a company to the CRM, only when the person asks to add one. Needs an existing contact to represent it.",
+      "annotations": {
+        "title": "Create Company",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_contact",
+      "title": "Create Contact",
+      "description": "Asks the person to confirm in the app before it acts. Add a person to the CRM, at an existing company when the person names one.",
+      "annotations": {
+        "title": "Create Contact",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_deal",
+      "title": "Create Deal",
+      "description": "Asks the person to confirm in the app before it acts. Add a new sales deal (opportunity) for a contact in a pipeline: its value, expected close and stage.",
+      "annotations": {
+        "title": "Create Deal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_estimate",
+      "title": "Create Draft Estimate",
+      "description": "Draft an estimate: a quote, not a bill. It is never sent.",
+      "annotations": {
+        "title": "Create Draft Estimate",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "create_expense",
+      "title": "Create Expense",
+      "description": "Record a one-time business expense (a cost or receipt): what it was, its amount and date, a client to bill it to.",
+      "annotations": {
+        "title": "Create Expense",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "create_follow_up",
+      "title": "Create Follow-Up",
+      "description": "Asks the person to confirm in the app before it acts. Set a follow-up with a contact, as Add Follow-Up does; on their calendar, it can email them.",
+      "annotations": {
+        "title": "Create Follow-Up",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_invoice_draft",
+      "title": "Create Draft Invoice",
+      "description": "Draft an invoice for a client. It is never sent; a person decides that.",
+      "annotations": {
+        "title": "Create Draft Invoice",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "create_item",
+      "title": "Create Item",
+      "description": "Asks the person to confirm in the app before it acts. Add a one-time item to the account's catalog, offered by every invoice and estimate picker. Only when asked.",
+      "annotations": {
+        "title": "Create Item",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "create_note",
+      "title": "Create Note",
+      "description": "Asks the person to confirm in the app before it acts. Leave a note on a contact, a company or a project.",
+      "annotations": {
+        "title": "Create Note",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_project",
+      "title": "Create Project",
+      "description": "Asks the person to confirm in the app before it acts. Start a project for a client. Dates are written the way this account writes them.",
+      "annotations": {
+        "title": "Create Project",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_proposal",
+      "title": "Create Draft Proposal",
+      "description": "Draft a proposal: a document of pages, not a bill. It is never sent.",
+      "annotations": {
+        "title": "Create Draft Proposal",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "create_staff_member",
+      "title": "Create Staff Member",
+      "description": "Asks the person to confirm in the app before it acts. Add a colleague to this account. Cannot make anyone an administrator.",
+      "annotations": {
+        "title": "Create Staff Member",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_task",
+      "title": "Create Task",
+      "description": "Asks the person to confirm in the app before it acts. Raise a task for someone in this account. It makes a task of its own, never a subtask of another.",
+      "annotations": {
+        "title": "Create Task",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_team",
+      "title": "Create Team",
+      "description": "Asks the person to confirm in the app before it acts. Create a team with a name, an optional description and optional members (user ids from find_colleague).",
+      "annotations": {
+        "title": "Create Team",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "delete_circle",
+      "title": "Delete Circle",
+      "description": "Asks the person to confirm in the app before it acts. Delete a circle for good; its members lose its portal access.",
+      "annotations": {
+        "title": "Delete Circle",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_company",
+      "title": "Delete or Deactivate Company",
+      "description": "Asks the person to confirm in the app before it acts. Set an active company inactive, or delete an inactive or idle one for good, as its CRM list does for the person asking.",
+      "annotations": {
+        "title": "Delete or Deactivate Company",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_contact",
+      "title": "Deactivate Contact",
+      "description": "Asks the person to confirm in the app before it acts. Set a contact inactive, as Set Inactive on the CRM screen does for the person asking; their portal login closes too.",
+      "annotations": {
+        "title": "Deactivate Contact",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_deal",
+      "title": "Delete Deal",
+      "description": "Asks the person to confirm in the app before it acts. Delete a deal for good; it leaves the pipeline board and the Deals list.",
+      "annotations": {
+        "title": "Delete Deal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "delete_estimate",
+      "title": "Delete Draft Estimate",
+      "description": "Asks the person to confirm in the app before it acts. Delete a draft estimate as the estimate list's Delete lets the person asking. One already sent or approved stays.",
+      "annotations": {
+        "title": "Delete Draft Estimate",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_expense",
+      "title": "Delete Expense",
+      "description": "Asks the person to confirm in the app before it acts. Delete an expense for good; one already billed on an invoice is never deleted.",
+      "annotations": {
+        "title": "Delete Expense",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "delete_follow_up",
+      "title": "Delete Follow-Up",
+      "description": "Asks the person to confirm in the app before it acts. Delete a follow-up for good; it leaves its calendars.",
+      "annotations": {
+        "title": "Delete Follow-Up",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_invoice_draft",
+      "title": "Delete Draft Invoice",
+      "description": "Asks the person to confirm in the app before it acts. Delete a draft invoice as the invoice list's Delete lets the person asking. Anything already sent or paid stays.",
+      "annotations": {
+        "title": "Delete Draft Invoice",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_note",
+      "title": "Delete Note",
+      "description": "Asks the person to confirm in the app before it acts. Delete a note as the note screen lets the person asking; a note that came from a support ticket stays.",
+      "annotations": {
+        "title": "Delete Note",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_project",
+      "title": "Delete Project",
+      "description": "Asks the person to confirm in the app before it acts. Delete a project as the person asking could on the project screen. Its tasks, files and phases are retired with it.",
+      "annotations": {
+        "title": "Delete Project",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_proposal",
+      "title": "Delete Draft Proposal",
+      "description": "Asks the person to confirm in the app before it acts. Delete a draft proposal as the proposal list's Delete lets the person asking. One already sent or signed stays.",
+      "annotations": {
+        "title": "Delete Draft Proposal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "delete_staff_member",
+      "title": "Deactivate Staff Member",
+      "description": "Asks the person to confirm in the app before it acts. Remove a colleague as the staff screen's Set Inactive does: the login closes, the record stays and can be restored.",
+      "annotations": {
+        "title": "Deactivate Staff Member",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "delete_task",
+      "title": "Delete Task",
+      "description": "Asks the person to confirm in the app before it acts. Delete a task, as the person asking could on the task screen. Its files and subtasks go with it.",
+      "annotations": {
+        "title": "Delete Task",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_team",
+      "title": "Delete Team",
+      "description": "Asks the person to confirm in the app before it acts. Delete a team as the Teams list's Delete does: it leaves the list and its team chat channel is removed.",
+      "annotations": {
+        "title": "Delete Team",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "delete_time_entry",
+      "title": "Delete Time Entry",
+      "description": "Asks the person to confirm in the app before it acts. Delete one stretch of a timer by its id from read_timer; one running or on an invoice is refused.",
+      "annotations": {
+        "title": "Delete Time Entry",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "delete_timer",
+      "title": "Delete Timer",
+      "description": "Asks the person to confirm in the app before it acts. Delete a timer by its title or id; one with any invoiced time is refused.",
+      "annotations": {
+        "title": "Delete Timer",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "duplicate_project",
+      "title": "Duplicate Project",
+      "description": "Asks the person to confirm in the app before it acts. Start a copy of a project with its tasks and team; it is made in the background.",
+      "annotations": {
+        "title": "Duplicate Project",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "find_circle",
+      "title": "Find Circles",
+      "description": "Find or list circles by name, oldest or newest first, as the Circles list shows them. Use before a circle id.",
+      "annotations": {
+        "title": "Find Circles",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_colleague",
+      "title": "Find Staff Members",
+      "description": "Find or list colleagues by name or email, oldest or newest first, as the staff roster shows them. Use before a user id.",
+      "annotations": {
+        "title": "Find Staff Members",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_company",
+      "title": "Find Companies",
+      "description": "Find or list companies by name, oldest or newest first, as the company list shows them. Use before a company id.",
+      "annotations": {
+        "title": "Find Companies",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_contact",
+      "title": "Find Contacts",
+      "description": "Find or list contacts by name, email or role, oldest or newest first, as the contact list shows them. Use before an id.",
+      "annotations": {
+        "title": "Find Contacts",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_deal",
+      "title": "Find Deals",
+      "description": "Find or list deals by title, contact, pipeline, stage, category, close date, amount, oldest or newest first.",
+      "annotations": {
+        "title": "Find Deals",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_estimate",
+      "title": "Find Estimates",
+      "description": "Find or list estimates by title, number or client, oldest or newest first, as the person sees them. Use before an id.",
+      "annotations": {
+        "title": "Find Estimates",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_expense",
+      "title": "Find Expenses",
+      "description": "Find or list business expenses (costs, receipts) by title, client, status, date or total, oldest or newest first.",
+      "annotations": {
+        "title": "Find Expenses",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_follow_up",
+      "title": "Find Follow-Ups",
+      "description": "Find or list follow-ups by status, category, contact, host, due dates or name, or oldest or newest first.",
+      "annotations": {
+        "title": "Find Follow-Ups",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_invoice",
+      "title": "Find Invoices",
+      "description": "Find or list invoices by title, number or client, oldest or newest first, as the person sees them. Use before an id.",
+      "annotations": {
+        "title": "Find Invoices",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_item",
+      "title": "Find Items",
+      "description": "Find or list catalog items by name, oldest or newest first, as the invoice and estimate line picker offers them.",
+      "annotations": {
+        "title": "Find Items",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_note",
+      "title": "Find Notes",
+      "description": "Find or list notes by title on a contact, company or project, or on every one, oldest or newest first, as tabs show.",
+      "annotations": {
+        "title": "Find Notes",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_payment",
+      "title": "Find Payments",
+      "description": "Find or list payments received on invoices and subscriptions by payer, method, day, transaction id or when recorded.",
+      "annotations": {
+        "title": "Find Payments",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_project",
+      "title": "Find Projects",
+      "description": "Find or list projects by name, oldest or newest first, on the Projects list of the person asking. Use before its id.",
+      "annotations": {
+        "title": "Find Projects",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_proposal",
+      "title": "Find Proposals",
+      "description": "Find or list proposals by title or client, oldest or newest first, as the person sees them. Use before a proposal id.",
+      "annotations": {
+        "title": "Find Proposals",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_sales_room",
+      "title": "Find Sales Rooms",
+      "description": "Find or list prospects' Sales Rooms (private links to a sales page design) by contact, design, status, oldest or newest.",
+      "annotations": {
+        "title": "Find Sales Rooms",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_subscription",
+      "title": "Find Subscriptions",
+      "description": "Find or list clients' recurring subscriptions by number, client, plan or status, oldest or newest first.",
+      "annotations": {
+        "title": "Find Subscriptions",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_task",
+      "title": "Find Tasks",
+      "description": "Find or list tasks by title, oldest or newest first, among those the person sees on their task lists. Use before its id.",
+      "annotations": {
+        "title": "Find Tasks",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_team",
+      "title": "Find Teams",
+      "description": "Find or list teams by name, oldest or newest first, as the Teams list shows them. Use before anything needing a team id.",
+      "annotations": {
+        "title": "Find Teams",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_timer",
+      "title": "Find Timers",
+      "description": "Find time-tracking timers by title, client, project, task, status, billing or owner, or oldest or newest first.",
+      "annotations": {
+        "title": "Find Timers",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_work_request",
+      "title": "Find Work Requests",
+      "description": "Find clients' work requests by name, client, status or day they came in, newest or oldest first: what awaits triage.",
+      "annotations": {
+        "title": "Find Work Requests",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "finish_timer",
+      "title": "Complete Timer",
+      "description": "Asks the person to confirm in the app before it acts. Mark a paused timer Completed by its title or id; one running, already completed or with no recorded time is refused.",
+      "annotations": {
+        "title": "Complete Timer",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "generate_sales_room",
+      "title": "Generate Sales Room for Contact",
+      "description": "Asks the person to confirm in the app before it acts. Generate a contact's own Sales Room from a design and, as the design says, email them its private link.",
+      "annotations": {
+        "title": "Generate Sales Room for Contact",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "link_contact_to_company",
+      "title": "Link Contact to Company",
+      "description": "Asks the person to confirm in the app before it acts. Link a contact in no company to a company, as Add Contact on its page does; it can email them the circle's files.",
+      "annotations": {
+        "title": "Link Contact to Company",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "link_text_number_to_contact",
+      "title": "Link Text Number to Contact",
+      "description": "Asks the person to confirm in the app before it acts. Link an unknown number's text conversations to a contact, as Link to Contact in the text inbox does.",
+      "annotations": {
+        "title": "Link Text Number to Contact",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "list_skills",
+      "title": "List Skills",
+      "description": "Lists the published Skills available to the signed-in staff member, including their IDs, names, kinds and summaries.",
+      "annotations": {
+        "title": "List Skills",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "log_time",
+      "title": "Log Time",
+      "description": "Asks the person to confirm in the app before it acts. Log a past time entry, with start and end, on a task or project as a new paused timer, at the person's own rate.",
+      "annotations": {
+        "title": "Log Time",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "make_expense_recurring",
+      "title": "Convert Expense to Recurring",
+      "description": "Asks the person to confirm in the app before it acts. Turn a one-time expense into a recurring expense on a schedule: a recurring copy, left as a draft.",
+      "annotations": {
+        "title": "Convert Expense to Recurring",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "move_deal",
+      "title": "Move Deal",
+      "description": "Asks the person to confirm in the app before it acts. Move a deal to another stage of its pipeline, which runs that stage's automations.",
+      "annotations": {
+        "title": "Move Deal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "pause_timer",
+      "title": "Pause Timer",
+      "description": "Asks the person to confirm in the app before it acts. Pause a running timer by its title or id; its running stretch ends now.",
+      "annotations": {
+        "title": "Pause Timer",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "preview_timer_billing",
+      "title": "Preview Timer Billing",
+      "description": "Price billing a timer's time before bill_timer: what it would charge, or why it is refused; bills nothing.",
+      "annotations": {
+        "title": "Preview Timer Billing",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "reactivate_sales_room",
+      "title": "Activate Revoked Sales Room",
+      "description": "Asks the person to confirm in the app before it acts. Reactivate a revoked Sales Room so the prospect's same link works again.",
+      "annotations": {
+        "title": "Activate Revoked Sales Room",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "read_circle",
+      "title": "Get Circle Details",
+      "description": "Read one circle: its description, color, whether it is on, and the clients and prospects in it.",
+      "annotations": {
+        "title": "Get Circle Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_client_balance",
+      "title": "Get Client Balances",
+      "description": "See a client's prepaid balance: credit, prepaid hours, prepaid sessions left. Give the client's name or id.",
+      "annotations": {
+        "title": "Get Client Balances",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_colleague",
+      "title": "Get Staff Member Details",
+      "description": "Read one colleague's record (role, email, last visit, Custom Fields) as the staff roster shows them to the person.",
+      "annotations": {
+        "title": "Get Staff Member Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_company",
+      "title": "Get Company Details",
+      "description": "Read one company in full, custom fields included, as the person asking could open it.",
+      "annotations": {
+        "title": "Get Company Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_contact",
+      "title": "Get Contact Details",
+      "description": "Read one contact in full (custom fields, company and the companies it represents) as the person asking could open it.",
+      "annotations": {
+        "title": "Get Contact Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_deal",
+      "title": "Get Deal Details",
+      "description": "Read one deal: how likely it is, amount, pipeline stage, won or lost, close date, contact, who follows it, history.",
+      "annotations": {
+        "title": "Get Deal Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_deal_activity",
+      "title": "Read Deal Activity",
+      "description": "Read the latest activity on deals the person follows: moves, wins, losses and changes, newest first.",
+      "annotations": {
+        "title": "Read Deal Activity",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_deal_forecast",
+      "title": "Read Deal Forecast",
+      "description": "Read a pipeline forecast by month: open, weighted, won and expected sales revenue to close.",
+      "annotations": {
+        "title": "Read Deal Forecast",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_estimate",
+      "title": "Get Estimate Details",
+      "description": "Read one estimate: lines, totals, paid, balance due, notes and Custom Fields, when the person's estimate list shows it.",
+      "annotations": {
+        "title": "Get Estimate Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_expense",
+      "title": "Get Expense Details",
+      "description": "Read one expense: its cost lines, total, billed or unbilled status, client, receipt date, recurring schedule.",
+      "annotations": {
+        "title": "Get Expense Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_follow_up",
+      "title": "Get Follow-Up Details",
+      "description": "Read one follow-up: contact, host, when, category, status, who sees it, whose calendars it is on.",
+      "annotations": {
+        "title": "Get Follow-Up Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_invoice",
+      "title": "Get Invoice Details",
+      "description": "Read one invoice: lines, totals, paid, balance due, notes and Custom Fields, when the person's invoice list shows it.",
+      "annotations": {
+        "title": "Get Invoice Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_item",
+      "title": "Get Item Details",
+      "description": "Read one catalog item (rate, quantity, discount, tax, descriptions, pricing options) as the Items screen shows it.",
+      "annotations": {
+        "title": "Get Item Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_note",
+      "title": "Get Note Details",
+      "description": "Read one note (message, author, the record it is on) as the person asking would see it on its notes tab.",
+      "annotations": {
+        "title": "Get Note Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_payment",
+      "title": "Get Payment Details",
+      "description": "Read one payment: its amount, method, day, status, payer, the invoice it paid and its transaction id.",
+      "annotations": {
+        "title": "Get Payment Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_project",
+      "title": "Get Project Details",
+      "description": "Read one project as the person asking could open it: open tasks, Custom Fields, and who its tasks can be assigned to.",
+      "annotations": {
+        "title": "Get Project Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_proposal",
+      "title": "Get Proposal Details",
+      "description": "Read one proposal (status, value, valid until, recipients, pages, reminders) when the person sees it on the list.",
+      "annotations": {
+        "title": "Get Proposal Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_sales_room",
+      "title": "Get Sales Room Details",
+      "description": "Read one Sales Room: its prospect, design, active or revoked status, private link, when they last opened it.",
+      "annotations": {
+        "title": "Get Sales Room Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_subscription",
+      "title": "Get Subscription Details",
+      "description": "Read one client's subscription: what it bills, how often, its next bill date, status, tax and discount.",
+      "annotations": {
+        "title": "Get Subscription Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_task",
+      "title": "Get Task Details",
+      "description": "Read one task in full, its project and assignee included, when the person asking sees it on one of their task lists.",
+      "annotations": {
+        "title": "Get Task Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_team",
+      "title": "Get Team Details",
+      "description": "Read one team (its description and the colleagues on it) as the Teams page shows it to the person asking.",
+      "annotations": {
+        "title": "Get Team Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_timer",
+      "title": "Get Timer Details",
+      "description": "Read one timer: its tracked time, time entries with start and end, rate, billed and unbilled money, and what it is for.",
+      "annotations": {
+        "title": "Get Timer Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_work_request",
+      "title": "Get Work Request Details",
+      "description": "Read one client's work request: what was asked, its items, answers, messages, price and what it converted to.",
+      "annotations": {
+        "title": "Get Work Request Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "record_payment",
+      "title": "Record Payment",
+      "description": "Asks the person to confirm in the app before it acts. Record money received on an invoice: it can email the client a receipt, run paid automations and grant access.",
+      "annotations": {
+        "title": "Record Payment",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "remove_branding_template",
+      "title": "Remove Branding Template",
+      "description": "Asks the person to confirm in the app before it acts. Take the applied Branding Template off the portal, leaving a clean look with its logos and the old look as a backup.",
+      "annotations": {
+        "title": "Remove Branding Template",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "remove_contact_from_circle",
+      "title": "Remove Contact from Circle",
+      "description": "Asks the person to confirm in the app before it acts. Take a person out of a circle; they lose its portal access.",
+      "annotations": {
+        "title": "Remove Contact from Circle",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "remove_contact_tag",
+      "title": "Remove Contact Tag",
+      "description": "Asks the person to confirm in the app before it acts. Take one tag off a contact by its name, as read_contact lists it; the contact's other tags stay.",
+      "annotations": {
+        "title": "Remove Contact Tag",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "reopen_deal",
+      "title": "Reopen Deal",
+      "description": "Asks the person to confirm in the app before it acts. Reopen a won or lost deal, so it is open again in its stage.",
+      "annotations": {
+        "title": "Reopen Deal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "repoint_timer",
+      "title": "Move Timer to Other Work",
+      "description": "Asks the person to confirm in the app before it acts. Point a timer at a different task, project or client, or at nothing; its time moves too and it keeps running.",
+      "annotations": {
+        "title": "Move Timer to Other Work",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "restore_contact",
+      "title": "Restore Contact",
+      "description": "Asks the person to confirm in the app before it acts. Bring back an inactive contact (find_contact with inactive true), as Set Active does; they rejoin their marketing lists.",
+      "annotations": {
+        "title": "Restore Contact",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "restore_project",
+      "title": "Restore Archived Project",
+      "description": "Asks the person to confirm in the app before it acts. Bring an archived project back onto the Projects list.",
+      "annotations": {
+        "title": "Restore Archived Project",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "restore_time_entry",
+      "title": "Restore Deleted Time Entry",
+      "description": "Asks the person to confirm in the app before it acts. Put back a stretch deleted from a timer within the last ten minutes, by the id it had.",
+      "annotations": {
+        "title": "Restore Deleted Time Entry",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "restore_timer",
+      "title": "Restore Deleted Timer",
+      "description": "Asks the person to confirm in the app before it acts. Bring a deleted timer back onto the Timers page by its title or id, with its time entries.",
+      "annotations": {
+        "title": "Restore Deleted Timer",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "restore_work_request",
+      "title": "Restore Archived Work Request",
+      "description": "Asks the person to confirm in the app before it acts. Bring an archived work request back to the Work Requests list, in the status it held.",
+      "annotations": {
+        "title": "Restore Archived Work Request",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "resume_timer",
+      "title": "Resume Timer",
+      "description": "Asks the person to confirm in the app before it acts. Run a paused or completed timer again by its title or id; running a completed one clears its Completed.",
+      "annotations": {
+        "title": "Resume Timer",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "revoke_sales_room",
+      "title": "Revoke Sales Room",
+      "description": "Asks the person to confirm in the app before it acts. Revoke a prospect's Sales Room link so it stops working; it can be reactivated later.",
+      "annotations": {
+        "title": "Revoke Sales Room",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "run_ar_aging_report",
+      "title": "Run Accounts Receivable Aging",
+      "description": "Run Accounts Receivable Aging: what clients owe on unpaid invoices, by days overdue (0-30 to 91+) or by client.",
+      "annotations": {
+        "title": "Run Accounts Receivable Aging",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_email_campaign_performance_report",
+      "title": "Run Email Campaign Performance",
+      "description": "Run Email Campaign Performance: sends, opens, clicks and unsubscribes, by campaign, month, audience or link.",
+      "annotations": {
+        "title": "Run Email Campaign Performance",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_invoice_status_report",
+      "title": "Run Invoice Status Summary",
+      "description": "Run Invoice Status Summary: the invoices of a period counted and totaled by status, by month or by client.",
+      "annotations": {
+        "title": "Run Invoice Status Summary",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_on_time_completion_report",
+      "title": "Run On-time Completion",
+      "description": "Run On-time Completion: tasks finished on time or late in a period, by project, assignee, client, leader or month.",
+      "annotations": {
+        "title": "Run On-time Completion",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_overdue_tasks_report",
+      "title": "Run Overdue Tasks",
+      "description": "Run Overdue Tasks: tasks past their due date and how late, by project, assignee, client, project leader or status.",
+      "annotations": {
+        "title": "Run Overdue Tasks",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_payments_received_report",
+      "title": "Run Payments Received",
+      "description": "Run Payments Received: payments taken in a period, by day, week, month, client, method, gateway or status, or each one.",
+      "annotations": {
+        "title": "Run Payments Received",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_profit_and_loss_report",
+      "title": "Run Profit & Loss",
+      "description": "Run Profit & Loss: income, refunds, expenses, tax and net profit in a period, by month, direction or category.",
+      "annotations": {
+        "title": "Run Profit & Loss",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_project_health_report",
+      "title": "Run Project Health",
+      "description": "Run Project Health: projects on track, at risk or overdue and their progress, by project leader, client or status.",
+      "annotations": {
+        "title": "Run Project Health",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_revenue_overview_report",
+      "title": "Run Revenue Overview",
+      "description": "Run Revenue Overview: invoiced, collected and outstanding revenue by month, quarter, year, invoice status or client.",
+      "annotations": {
+        "title": "Run Revenue Overview",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_sales_by_target_report",
+      "title": "Run Sales by Target",
+      "description": "Run Sales by Target: what each client was invoiced in a period, by client, month or owner, or invoice by invoice.",
+      "annotations": {
+        "title": "Run Sales by Target",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_sales_pipeline_report",
+      "title": "Run Sales Pipeline",
+      "description": "Run Sales Pipeline: the deals of a pipeline, their value and weighted value, by stage, client or expected close month.",
+      "annotations": {
+        "title": "Run Sales Pipeline",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_sales_tax_report",
+      "title": "Run Sales Tax",
+      "description": "Run Sales Tax: the tax collected, refunded and net on payments in a period, by tax or by month.",
+      "annotations": {
+        "title": "Run Sales Tax",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_timesheets_report",
+      "title": "Run Timesheets",
+      "description": "Run Timesheets: the time logged in a period, entry by entry or by day, week, month, staff, client, project or task.",
+      "annotations": {
+        "title": "Run Timesheets",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "run_uninvoiced_time_report",
+      "title": "Run Uninvoiced Time and Value",
+      "description": "Run Uninvoiced Time and Value: billable time not yet invoiced and its value, by client, project, staff, task or date.",
+      "annotations": {
+        "title": "Run Uninvoiced Time and Value",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "send_portal_invite",
+      "title": "Send Portal Invitation",
+      "description": "Asks the person to confirm in the app before it acts. Email a prospect or client their portal invitation, until accepted. Not after convert_contact emailed it.",
+      "annotations": {
+        "title": "Send Portal Invitation",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "set_circle_status",
+      "title": "Set Circle Status",
+      "description": "Asks the person to confirm in the app before it acts. Switch a circle on or off; off takes its portal access from its members.",
+      "annotations": {
+        "title": "Set Circle Status",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "set_company_primary_contact",
+      "title": "Set Company Primary Contact",
+      "description": "Asks the person to confirm in the app before it acts. Make a contact the primary contact who may act for a company, as its page does; it can email them that they now do.",
+      "annotations": {
+        "title": "Set Company Primary Contact",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "set_contact_salespeople",
+      "title": "Set Contact Salespeople",
+      "description": "Asks the person to confirm in the app before it acts. Set a contact's primary salesperson and the salespeople it is shared with, or unassign it, as the contact page does.",
+      "annotations": {
+        "title": "Set Contact Salespeople",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "set_follow_up_status",
+      "title": "Set Follow-Up Status",
+      "description": "Asks the person to confirm in the app before it acts. Mark a follow-up done, which runs its automations, or not done.",
+      "annotations": {
+        "title": "Set Follow-Up Status",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "set_project_status",
+      "title": "Set Project Status",
+      "description": "Asks the person to confirm in the app before it acts. Set a project's status to one of the account's own; Completed finishes it.",
+      "annotations": {
+        "title": "Set Project Status",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "set_task_priority",
+      "title": "Set Task Priority",
+      "description": "Asks the person to confirm in the app before it acts. Set a task's priority (urgent, high, normal, low or the account's own) by its title or id.",
+      "annotations": {
+        "title": "Set Task Priority",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "set_timer_day",
+      "title": "Set What a Day Comes To",
+      "description": "Asks the person to confirm in the app before it acts. Set what one day of a timer comes to, in hours; below its billed time, or while it runs that day, is refused.",
+      "annotations": {
+        "title": "Set What a Day Comes To",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "start_timer",
+      "title": "Start Timer",
+      "description": "Asks the person to confirm in the app before it acts. Start a running timer now in the person's own name at their own rate (takes no rate), beside any already running.",
+      "annotations": {
+        "title": "Start Timer",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "unlink_contact_from_company",
+      "title": "Unlink Contact from Company",
+      "description": "Asks the person to confirm in the app before it acts. Unlink a contact from their company, as Remove on its contact list does; they leave the company's circle.",
+      "annotations": {
+        "title": "Unlink Contact from Company",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "update_circle",
+      "title": "Update Circle",
+      "description": "Asks the person to confirm in the app before it acts. Change a circle's name, description or color (only the fields you name); members change through their own tools.",
+      "annotations": {
+        "title": "Update Circle",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_company",
+      "title": "Update Company",
+      "description": "Asks the person to confirm in the app before it acts. Change a company's details, its Custom Fields included. Only the fields you name are touched.",
+      "annotations": {
+        "title": "Update Company",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_contact",
+      "title": "Update Contact",
+      "description": "Asks the person to confirm in the app before it acts. Change a contact's details, company and Custom Fields included. Only the fields you name are touched; role is not one.",
+      "annotations": {
+        "title": "Update Contact",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "update_deal",
+      "title": "Update Deal",
+      "description": "Asks the person to confirm in the app before it acts. Edit a deal's details (title, value, expected close, contact, followers); only the fields you name.",
+      "annotations": {
+        "title": "Update Deal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_estimate",
+      "title": "Update Draft Estimate",
+      "description": "Asks the person to confirm in the app before it acts. Change a draft estimate's title, due date, amount, client Note or Custom Fields, as the person's estimate screen allows.",
+      "annotations": {
+        "title": "Update Draft Estimate",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_expense",
+      "title": "Update Expense",
+      "description": "Asks the person to confirm in the app before it acts. Edit an expense's details (title, amount, date, client, billable, category); only the fields you name.",
+      "annotations": {
+        "title": "Update Expense",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_follow_up",
+      "title": "Update Follow-Up",
+      "description": "Asks the person to confirm in the app before it acts. Change or reschedule a follow-up to another day or time, only the fields you name; its calendars follow.",
+      "annotations": {
+        "title": "Update Follow-Up",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "update_invoice_draft",
+      "title": "Update Draft Invoice",
+      "description": "Asks the person to confirm in the app before it acts. Change a draft invoice's title, due date, amount, client Note or Custom Fields, as the person's invoice screen allows.",
+      "annotations": {
+        "title": "Update Draft Invoice",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_note",
+      "title": "Update Note",
+      "description": "Asks the person to confirm in the app before it acts. Change a note's message or title, as the note screen lets the person asking. Who can see it is not touched.",
+      "annotations": {
+        "title": "Update Note",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "update_project",
+      "title": "Update Project",
+      "description": "Asks the person to confirm in the app before it acts. Change a project's details, its Custom Fields included. Only the fields you name are touched; the client is not one.",
+      "annotations": {
+        "title": "Update Project",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "update_proposal",
+      "title": "Update Draft Proposal",
+      "description": "Asks the person to confirm in the app before it acts. Change a draft proposal's title or due date, as the proposal editor lets the person asking. Its pages are not touched.",
+      "annotations": {
+        "title": "Update Draft Proposal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_staff_member",
+      "title": "Update Staff Member",
+      "description": "Asks the person to confirm in the app before it acts. Change a colleague's details, their Custom Fields included. Only the fields you name; the role is not one.",
+      "annotations": {
+        "title": "Update Staff Member",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_subscription",
+      "title": "Update Subscription",
+      "description": "Asks the person to confirm in the app before it acts. Change a subscription's quantity, rate, discount, tax, next bill date or billing cycle; never its client or plan.",
+      "annotations": {
+        "title": "Update Subscription",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "update_task",
+      "title": "Update Task",
+      "description": "Asks the person to confirm in the app before it acts. Complete a task, hand it to someone else, or move its due date.",
+      "annotations": {
+        "title": "Update Task",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "update_team",
+      "title": "Update Team",
+      "description": "Asks the person to confirm in the app before it acts. Change a team's name or description. Only the fields you name; members are added with add_staff_to_team.",
+      "annotations": {
+        "title": "Update Team",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_time_entry",
+      "title": "Update Time Entry",
+      "description": "Asks the person to confirm in the app before it acts. Correct one stretch of a timer by its id from read_timer; one running or on an invoice is refused.",
+      "annotations": {
+        "title": "Update Time Entry",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_timer",
+      "title": "Update Timer",
+      "description": "Asks the person to confirm in the app before it acts. Rename a timer, or change its hourly rate or note; a new rate reprices its tracked time.",
+      "annotations": {
+        "title": "Update Timer",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "use_skill",
+      "title": "Use a Skill",
+      "description": "Retrieves a published Skill by ID, including its saved instructions and related settings.",
+      "annotations": {
+        "title": "Use a Skill",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ]
+}
