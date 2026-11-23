@@ -1,5 +1,6 @@
 // Regression tests for build-tools-md.mjs: the safety filter, the Kind labels and the count line.
-// Run with `node --test scripts/` (Node's built-in test runner, no dependencies).
+// Run with `node --test scripts/*.test.mjs` (Node's built-in test runner, no dependencies). Name the files: Node 22
+// and later read a bare folder such as `scripts/` as a file and fail.
 //
 // The "real export" case reads data/tools.json, the public copy of the server's export. Set TOOLS_EXPORT to a raw
 // export to run it against that instead.

@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '22'
       - name: Run the generator tests
-        run: node --test scripts/
+        run: node --test scripts/*.test.mjs
       - name: Rebuild TOOLS.md from data/tools.json
         run: |
           date=$(sed -n 's/^Last updated: \([0-9-]*\).*/\1/p' TOOLS.md | head -n 1)
