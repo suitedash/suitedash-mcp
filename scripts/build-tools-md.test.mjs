@@ -62,15 +62,18 @@ function assertBlocked(r, what) {
   assert.match(r.stderr, /TOOLS\.md not written/);
 }
 
-test('the real export passes with the expected counts and labels', () => {
+test('the real export passes, its count line matches it and every tool has an area', () => {
   const raw = JSON.parse(readFileSync(realExport, 'utf8'));
   const r = run(raw.tools);
   assert.equal(r.status, 0, r.stderr);
   const summary = JSON.parse(r.stdout.trim());
-  assert.equal(summary.tools, 162);
-  assert.equal(summary.read, 60);
-  assert.equal(summary.changesData, 102);
-  assert.match(r.md, /^More than 160 tools: 60 read and 102 that change data\.$/m);
+  assert.ok(summary.tools > 0, 'the export has tools');
+  assert.equal(summary.tools, raw.tools.length - summary.leftOut);
+  assert.equal(summary.read + summary.changesData, summary.tools);
+  const floor = Math.floor(summary.tools / 10) * 10;
+  const count = floor === summary.tools || floor === 0 ? `${summary.tools} tools` : `More than ${floor} tools`;
+  assert.ok(r.md.includes(`\n${count}: ${summary.read} read and ${summary.changesData} that change data.\n`), 'count line');
+  assert.deepEqual(summary.other, [], 'tools with no area: add them to scripts/tool-areas.json');
   assert.doesNotMatch(r.md, /Destructive/);
   assert.doesNotMatch(r.md, /[\u2013\u2014]/);
 });
