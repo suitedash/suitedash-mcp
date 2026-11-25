@@ -6,6 +6,42 @@
   ],
   "tools": [
     {
+      "name": "act_on_timers",
+      "title": "Update Several Timers",
+      "description": "Asks the person to confirm in the app before it acts. Complete, pause, resume, delete, restore or move several timers to other work at once; each skipped one says why.",
+      "annotations": {
+        "title": "Update Several Timers",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "activate_email_cannon",
+      "title": "Activate Email Cannon",
+      "description": "Asks the person to confirm in the app before it acts. Activate a draft Email Cannon so it can be sent to contacts; this emails no one, and an active one is left as it is.",
+      "annotations": {
+        "title": "Activate Email Cannon",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "add_company_tag",
+      "title": "Add Company Tag",
+      "description": "Asks the person to confirm in the app before it acts. Give a company one or more tags by name, keeping the tags it has; a tag the account lacks is made.",
+      "annotations": {
+        "title": "Add Company Tag",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "add_contact_tag",
       "title": "Add Contact Tag",
       "description": "Asks the person to confirm in the app before it acts. Give a contact one or more tags by name, keeping the tags it has; a tag the account lacks is made.",
@@ -54,6 +90,18 @@
       }
     },
     {
+      "name": "add_ticket_note",
+      "title": "Add Support Ticket Note",
+      "description": "Asks the person to confirm in the app before it acts. Write a staff-only note on a support conversation; only staff read it, never the client.",
+      "annotations": {
+        "title": "Add Support Ticket Note",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "add_time_entry",
       "title": "Add Time Entry",
       "description": "Asks the person to confirm in the app before it acts. Add a stretch to a timer, finished or billed too; start and end are required, and a running timer is refused.",
@@ -66,11 +114,35 @@
       }
     },
     {
+      "name": "add_to_audience",
+      "title": "Add People to Audience",
+      "description": "Asks the person to confirm in the app before it acts. Add CRM contacts or plain email addresses to an audience; they start the audience's autoresponders.",
+      "annotations": {
+        "title": "Add People to Audience",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "adjust_client_balance",
       "title": "Adjust Client Balance",
       "description": "Asks the person to confirm in the app before it acts. Top up, take away from or set a client's prepaid balance (credit, hours, sessions), by the id read_client_balance gives.",
       "annotations": {
         "title": "Adjust Client Balance",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "answer_flow_help",
+      "title": "Reply to Flow Help Request",
+      "description": "Asks the person to confirm in the app before it acts. Answer a help request on a flow step; the person on the flow is emailed the reply.",
+      "annotations": {
+        "title": "Reply to Flow Help Request",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": false,
@@ -114,11 +186,71 @@
       }
     },
     {
+      "name": "archive_quiz",
+      "title": "Archive Quiz",
+      "description": "Asks the person to confirm in the app before it acts. Archive a quiz; one an active course still needs is refused, naming the course. The confirmation names the quiz.",
+      "annotations": {
+        "title": "Archive Quiz",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "archive_work_request",
       "title": "Archive Work Request",
       "description": "Asks the person to confirm in the app before it acts. Archive a client's work request, moving it off the Work Requests list; restore_work_request brings it back.",
       "annotations": {
         "title": "Archive Work Request",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "assign_checklist",
+      "title": "Create Checklist Assignment",
+      "description": "Asks the person to confirm in the app before it acts. Give a person a checklist by its title; the person is emailed.",
+      "annotations": {
+        "title": "Create Checklist Assignment",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "assign_flow",
+      "title": "Assign a Flow",
+      "description": "Asks the person to confirm in the app before it acts. Put a person on an on-demand flow by its title, keeping their other flows; the person is emailed.",
+      "annotations": {
+        "title": "Assign a Flow",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "assign_quiz",
+      "title": "Assign Quiz to People",
+      "description": "Asks the person to confirm in the app before it acts. Send a quiz to colleagues or contacts by user id; only people the Quiz Assigned email reaches are emailed.",
+      "annotations": {
+        "title": "Assign Quiz to People",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "assign_ticket",
+      "title": "Assign Support Ticket",
+      "description": "Asks the person to confirm in the app before it acts. Give a support conversation to a colleague; the colleague is emailed unless it is the person asking.",
+      "annotations": {
+        "title": "Assign Support Ticket",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
@@ -162,6 +294,30 @@
       }
     },
     {
+      "name": "bill_timers",
+      "title": "Bill Several Timers",
+      "description": "Asks the person to confirm in the app before it acts. Bill several timers onto one document at the price preview_timer_billing gave; bills nothing if anything changed.",
+      "annotations": {
+        "title": "Bill Several Timers",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "cancel_checklist",
+      "title": "Cancel Checklist",
+      "description": "Asks the person to confirm in the app before it acts. Cancel a person's open checklist, taking them off it; its step history is kept.",
+      "annotations": {
+        "title": "Cancel Checklist",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "cancel_subscription",
       "title": "Cancel Subscription",
       "description": "Asks the person to confirm in the app before it acts. Cancel a subscription for good: it can email the client, fire the webhook and end paid and course access.",
@@ -170,6 +326,18 @@
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "change_quiz_attempts",
+      "title": "Adjust Quiz Attempts",
+      "description": "Asks the person to confirm in the app before it acts. Give a student a fresh set of attempts at a quiz in a course, or reset them, by a course_stops result_id.",
+      "annotations": {
+        "title": "Adjust Quiz Attempts",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
         "openWorldHint": true
       }
     },
@@ -224,37 +392,49 @@
     {
       "name": "convert_work_request_to_estimate",
       "title": "Convert Work Request to Estimate",
-      "description": "Asks the person to confirm in the app before it acts. Convert a work request into a new or existing estimate or quote; items become lines and the client is emailed.",
+      "description": "Asks the person to confirm in the app before it acts. Convert a work request into a new or existing estimate or quote; items become lines, and the client may be emailed.",
       "annotations": {
         "title": "Convert Work Request to Estimate",
         "readOnlyHint": false,
         "destructiveHint": true,
-        "idempotentHint": true,
+        "idempotentHint": false,
         "openWorldHint": true
       }
     },
     {
       "name": "convert_work_request_to_invoice",
       "title": "Convert Work Request to Invoice",
-      "description": "Asks the person to confirm in the app before it acts. Convert a work request into a new or existing invoice; items become lines and the client is emailed a link.",
+      "description": "Asks the person to confirm in the app before it acts. Convert a work request into a new or existing invoice; items become lines, and the client may be emailed a link.",
       "annotations": {
         "title": "Convert Work Request to Invoice",
         "readOnlyHint": false,
         "destructiveHint": true,
-        "idempotentHint": true,
+        "idempotentHint": false,
         "openWorldHint": true
       }
     },
     {
       "name": "convert_work_request_to_project",
       "title": "Convert Work Request to Project",
-      "description": "Asks the person to confirm in the app before it acts. Convert a work request into a new or existing project; items become tasks and the client is emailed a link.",
+      "description": "Asks the person to confirm in the app before it acts. Convert a work request into a new or existing project; items become tasks, and the client may be emailed a link.",
       "annotations": {
         "title": "Convert Work Request to Project",
         "readOnlyHint": false,
         "destructiveHint": true,
-        "idempotentHint": true,
+        "idempotentHint": false,
         "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_audience",
+      "title": "Create Audience",
+      "description": "Asks the person to confirm in the app before it acts. Create an empty marketing audience with a name. It reaches nobody until people are added to it.",
+      "annotations": {
+        "title": "Create Audience",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
       }
     },
     {
@@ -303,6 +483,18 @@
         "destructiveHint": true,
         "idempotentHint": false,
         "openWorldHint": true
+      }
+    },
+    {
+      "name": "create_document_from_template",
+      "title": "Create Document from Template",
+      "description": "Asks the person to confirm in the app before it acts. Make a draft document from a template for a client. It emails nobody; sending it is another step.",
+      "annotations": {
+        "title": "Create Document from Template",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
       }
     },
     {
@@ -486,6 +678,18 @@
       }
     },
     {
+      "name": "delete_document",
+      "title": "Delete Document",
+      "description": "Asks the person to confirm in the app before it acts. Delete a draft, completed form or voided document for good. One out for signature or completed stays.",
+      "annotations": {
+        "title": "Delete Document",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "delete_estimate",
       "title": "Delete Draft Estimate",
       "description": "Asks the person to confirm in the app before it acts. Delete a draft estimate as the estimate list's Delete lets the person asking. One already sent or approved stays.",
@@ -608,7 +812,7 @@
     {
       "name": "delete_time_entry",
       "title": "Delete Time Entry",
-      "description": "Asks the person to confirm in the app before it acts. Delete one stretch of a timer by its id from read_timer; one running or on an invoice is refused.",
+      "description": "Asks the person to confirm in the app before it acts. Delete one or several stretches of a timer by their ids from read_timer; one running or invoiced refuses them all.",
       "annotations": {
         "title": "Delete Time Entry",
         "readOnlyHint": false,
@@ -630,6 +834,18 @@
       }
     },
     {
+      "name": "download_document_pdf",
+      "title": "Get Document PDF",
+      "description": "Get a document's PDF link and, for an uploaded PDF, its signed-copy page; other PDFs already hold the signatures.",
+      "annotations": {
+        "title": "Get Document PDF",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "duplicate_project",
       "title": "Duplicate Project",
       "description": "Asks the person to confirm in the app before it acts. Start a copy of a project with its tasks and team; it is made in the background.",
@@ -639,6 +855,30 @@
         "destructiveHint": true,
         "idempotentHint": false,
         "openWorldHint": true
+      }
+    },
+    {
+      "name": "find_audience",
+      "title": "Find Audiences",
+      "description": "Find or list audiences by name with subscriber counts, as the Audiences list shows them. Use before an audience id.",
+      "annotations": {
+        "title": "Find Audiences",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_campaign",
+      "title": "Find Campaigns",
+      "description": "Find or list marketing campaigns by title or status, as the Campaigns list shows them. Use before a campaign id.",
+      "annotations": {
+        "title": "Find Campaigns",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
       }
     },
     {
@@ -680,7 +920,7 @@
     {
       "name": "find_contact",
       "title": "Find Contacts",
-      "description": "Find or list contacts by name, email or role, oldest or newest first, as the contact list shows them. Use before an id.",
+      "description": "Find or list contacts by name, email address or role, oldest or newest first, as the list shows them. Use before an id.",
       "annotations": {
         "title": "Find Contacts",
         "readOnlyHint": true,
@@ -695,6 +935,30 @@
       "description": "Find or list deals by title, contact, pipeline, stage, category, close date, amount, oldest or newest first.",
       "annotations": {
         "title": "Find Deals",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_documents",
+      "title": "Find Documents",
+      "description": "Find documents sent for signature, and drafts, by title, the person they are for or a signer, or where signing stands.",
+      "annotations": {
+        "title": "Find Documents",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_email_cannon",
+      "title": "Find Email Cannons",
+      "description": "Find or list Email Cannons by title or status, as the Email Cannons list shows them. Use before a cannon id.",
+      "annotations": {
+        "title": "Find Email Cannons",
         "readOnlyHint": true,
         "destructiveHint": false,
         "idempotentHint": true,
@@ -810,6 +1074,18 @@
       }
     },
     {
+      "name": "find_quizzes",
+      "title": "Find Quizzes",
+      "description": "Find or list quizzes by title, with each one's status, as the Quizzes list shows them. Use before a quiz id.",
+      "annotations": {
+        "title": "Find Quizzes",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "find_sales_room",
       "title": "Find Sales Rooms",
       "description": "Find or list prospects' Sales Rooms (private links to a sales page design) by contact, design, status, oldest or newest.",
@@ -836,7 +1112,7 @@
     {
       "name": "find_task",
       "title": "Find Tasks",
-      "description": "Find or list tasks by title, oldest or newest first, among those the person sees on their task lists. Use before its id.",
+      "description": "Find or list tasks by title, oldest or newest first, or one project's, on the person's task lists. Use before its id.",
       "annotations": {
         "title": "Find Tasks",
         "readOnlyHint": true,
@@ -851,6 +1127,18 @@
       "description": "Find or list teams by name, oldest or newest first, as the Teams list shows them. Use before anything needing a team id.",
       "annotations": {
         "title": "Find Teams",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "find_ticket",
+      "title": "Find Support Tickets",
+      "description": "Find or list support conversations by words, number, status or who holds them, as the Support list shows them.",
+      "annotations": {
+        "title": "Find Support Tickets",
         "readOnlyHint": true,
         "destructiveHint": false,
         "idempotentHint": true,
@@ -978,6 +1266,18 @@
       }
     },
     {
+      "name": "open_ticket",
+      "title": "Create Support Ticket",
+      "description": "Asks the person to confirm in the app before it acts. Start a new support conversation (ticket) for a client; the client is emailed that a ticket was opened for them.",
+      "annotations": {
+        "title": "Create Support Ticket",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "pause_timer",
       "title": "Pause Timer",
       "description": "Asks the person to confirm in the app before it acts. Pause a running timer by its title or id; its running stretch ends now.",
@@ -992,7 +1292,7 @@
     {
       "name": "preview_timer_billing",
       "title": "Preview Timer Billing",
-      "description": "Price billing a timer's time before bill_timer: what it would charge, or why it is refused; bills nothing.",
+      "description": "Price billing one timer's time, or several timers' together, before billing: the charge, or why refused; bills nothing.",
       "annotations": {
         "title": "Preview Timer Billing",
         "readOnlyHint": true,
@@ -1011,6 +1311,42 @@
         "destructiveHint": true,
         "idempotentHint": true,
         "openWorldHint": true
+      }
+    },
+    {
+      "name": "read_audience",
+      "title": "Get Audience Details",
+      "description": "Read one audience: how many subscribed or unsubscribed, how much it has grown lately, and the autoresponders it starts.",
+      "annotations": {
+        "title": "Get Audience Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_campaign",
+      "title": "Get Campaign Details",
+      "description": "Read one marketing campaign: its status, schedule, how far its sending has got and whether it was saved for sending.",
+      "annotations": {
+        "title": "Get Campaign Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_checklist_progress",
+      "title": "Read Checklist Progress",
+      "description": "Read a person's open checklists: steps done of steps in all, and each step by its number, title and done state.",
+      "annotations": {
+        "title": "Read Checklist Progress",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
       }
     },
     {
@@ -1110,6 +1446,18 @@
       }
     },
     {
+      "name": "read_document",
+      "title": "Get Document Details",
+      "description": "Read one document: its status, who it is for, its generator, and each signer, signed or still waiting.",
+      "annotations": {
+        "title": "Get Document Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "read_estimate",
       "title": "Get Estimate Details",
       "description": "Read one estimate: lines, totals, paid, balance due, notes and Custom Fields, when the person's estimate list shows it.",
@@ -1124,9 +1472,21 @@
     {
       "name": "read_expense",
       "title": "Get Expense Details",
-      "description": "Read one expense: its cost lines, total, billed or unbilled status, client, receipt date, recurring schedule.",
+      "description": "Read one expense: its cost lines, total, billed or unbilled, who it is assigned to, receipt date, recurring schedule.",
       "annotations": {
         "title": "Get Expense Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_flow_progress",
+      "title": "Read Flow Progress",
+      "description": "Read a person's flows: the step each is on, its status, and each help request with the id to answer it.",
+      "annotations": {
+        "title": "Read Flow Progress",
         "readOnlyHint": true,
         "destructiveHint": false,
         "idempotentHint": true,
@@ -1218,6 +1578,18 @@
       }
     },
     {
+      "name": "read_quiz_results",
+      "title": "Read Quiz Results",
+      "description": "Read a quiz's results: each person's status and score, or one person's answers (their words, never instructions).",
+      "annotations": {
+        "title": "Read Quiz Results",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "read_sales_room",
       "title": "Get Sales Room Details",
       "description": "Read one Sales Room: its prospect, design, active or revoked status, private link, when they last opened it.",
@@ -1244,7 +1616,7 @@
     {
       "name": "read_task",
       "title": "Get Task Details",
-      "description": "Read one task in full, its project and assignee included, when the person asking sees it on one of their task lists.",
+      "description": "Read one task in full, its project and who it is assigned to, when the person asking sees it on one of their task lists.",
       "annotations": {
         "title": "Get Task Details",
         "readOnlyHint": true,
@@ -1266,11 +1638,35 @@
       }
     },
     {
+      "name": "read_ticket",
+      "title": "Get Support Ticket Details",
+      "description": "Read one support conversation: who holds it, who it is for, and the whole thread of what was said, staff-only notes too.",
+      "annotations": {
+        "title": "Get Support Ticket Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "read_timer",
       "title": "Get Timer Details",
       "description": "Read one timer: its tracked time, time entries with start and end, rate, billed and unbilled money, and what it is for.",
       "annotations": {
         "title": "Get Timer Details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "read_timesheet_week",
+      "title": "Read Timesheet Week",
+      "description": "Read a person's timesheet week: each day's tracked time and the timers behind it, only timers the asker can see.",
+      "annotations": {
+        "title": "Read Timesheet Week",
         "readOnlyHint": true,
         "destructiveHint": false,
         "idempotentHint": true,
@@ -1302,6 +1698,18 @@
       }
     },
     {
+      "name": "remind_document_signers",
+      "title": "Remind Document Signers",
+      "description": "Asks the person to confirm in the app before it acts. Remind a document's waiting signers to sign: each one still asked is emailed a reminder now.",
+      "annotations": {
+        "title": "Remind Document Signers",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "remove_branding_template",
       "title": "Remove Branding Template",
       "description": "Asks the person to confirm in the app before it acts. Take the applied Branding Template off the portal, leaving a clean look with its logos and the old look as a backup.",
@@ -1311,6 +1719,18 @@
         "destructiveHint": true,
         "idempotentHint": false,
         "openWorldHint": true
+      }
+    },
+    {
+      "name": "remove_company_tag",
+      "title": "Remove Company Tag",
+      "description": "Asks the person to confirm in the app before it acts. Take one tag off a company by its name, as read_company lists it; the company's other tags stay.",
+      "annotations": {
+        "title": "Remove Company Tag",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
       }
     },
     {
@@ -1350,6 +1770,18 @@
       }
     },
     {
+      "name": "reply_to_ticket",
+      "title": "Reply to Support Ticket",
+      "description": "Asks the person to confirm in the app before it acts. Answer a support conversation; the client is emailed the reply and reads it in their portal.",
+      "annotations": {
+        "title": "Reply to Support Ticket",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "repoint_timer",
       "title": "Move Timer to Other Work",
       "description": "Asks the person to confirm in the app before it acts. Point a timer at a different task, project or client, or at nothing; its time moves too and it keeps running.",
@@ -1359,6 +1791,30 @@
         "destructiveHint": true,
         "idempotentHint": true,
         "openWorldHint": false
+      }
+    },
+    {
+      "name": "resend_document",
+      "title": "Resend Document for Signature",
+      "description": "Asks the person to confirm in the app before it acts. Resend a document out for signature: everyone still asked to sign is emailed again.",
+      "annotations": {
+        "title": "Resend Document for Signature",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "resend_invoice",
+      "title": "Resend Invoice",
+      "description": "Asks the person to confirm in the app before it acts. Email an open or partly paid invoice to its client again, as a reminder to pay it.",
+      "annotations": {
+        "title": "Resend Invoice",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
       }
     },
     {
@@ -1388,7 +1844,7 @@
     {
       "name": "restore_time_entry",
       "title": "Restore Deleted Time Entry",
-      "description": "Asks the person to confirm in the app before it acts. Put back a stretch deleted from a timer within the last ten minutes, by the id it had.",
+      "description": "Asks the person to confirm in the app before it acts. Put back one or several stretches deleted from a timer within the last ten minutes, by the ids they had.",
       "annotations": {
         "title": "Restore Deleted Time Entry",
         "readOnlyHint": false,
@@ -1614,6 +2070,66 @@
       }
     },
     {
+      "name": "send_campaign",
+      "title": "Send Campaign",
+      "description": "Asks the person to confirm in the app before it acts. Send a draft campaign now, or schedule it for a stated time, to the audiences named; a sent one never goes again.",
+      "annotations": {
+        "title": "Send Campaign",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "send_document",
+      "title": "Send Document",
+      "description": "Asks the person to confirm in the app before it acts. Send a draft document for signature: its first signers are emailed, later signers in their turn.",
+      "annotations": {
+        "title": "Send Document",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "send_email_cannon",
+      "title": "Send Email Cannon",
+      "description": "Asks the person to confirm in the app before it acts. Send, fire or shoot one or more active Email Cannons to one contact with a portal login, after the person confirms.",
+      "annotations": {
+        "title": "Send Email Cannon",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "send_estimate",
+      "title": "Send Estimate",
+      "description": "Asks the person to confirm in the app before it acts. Send an estimate to the people on it: a draft opens, and each of them is emailed it to approve.",
+      "annotations": {
+        "title": "Send Estimate",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "send_invoice",
+      "title": "Send Invoice",
+      "description": "Asks the person to confirm in the app before it acts. Send a draft invoice to its client: it opens, takes its number and the client is emailed it to pay.",
+      "annotations": {
+        "title": "Send Invoice",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "send_portal_invite",
       "title": "Send Portal Invitation",
       "description": "Asks the person to confirm in the app before it acts. Email a prospect or client their portal invitation, until accepted. Not after convert_contact emailed it.",
@@ -1698,6 +2214,30 @@
       }
     },
     {
+      "name": "set_ticket_priority",
+      "title": "Set Support Ticket Priority",
+      "description": "Asks the person to confirm in the app before it acts. Set a support conversation's priority to one of the account's own, such as High, Normal or Low.",
+      "annotations": {
+        "title": "Set Support Ticket Priority",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "set_ticket_status",
+      "title": "Set Support Ticket Status",
+      "description": "Asks the person to confirm in the app before it acts. Close, reopen or set a support conversation's status, such as Active or Pending; deleting is never a status.",
+      "annotations": {
+        "title": "Set Support Ticket Status",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "set_timer_day",
       "title": "Set What a Day Comes To",
       "description": "Asks the person to confirm in the app before it acts. Set what one day of a timer comes to, in hours; below its billed time, or while it runs that day, is refused.",
@@ -1719,6 +2259,54 @@
         "destructiveHint": true,
         "idempotentHint": false,
         "openWorldHint": false
+      }
+    },
+    {
+      "name": "tag_ticket",
+      "title": "Tag Support Ticket",
+      "description": "Asks the person to confirm in the app before it acts. Add or remove one of the account's own tags on a support conversation; a tag is never created.",
+      "annotations": {
+        "title": "Tag Support Ticket",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "test_send_email_cannon",
+      "title": "Send Email Cannon Test",
+      "description": "Asks the person to confirm in the app before it acts. Send a test of an Email Cannon to the people given, or to the person asking when none are given.",
+      "annotations": {
+        "title": "Send Email Cannon Test",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "tick_checklist_step",
+      "title": "Complete Checklist Step",
+      "description": "Asks the person to confirm in the app before it acts. Tick a step of a person's checklist for them, running that step's automations; a step already done is refused.",
+      "annotations": {
+        "title": "Complete Checklist Step",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "unassign_quiz",
+      "title": "Remove People from Quiz",
+      "description": "Asks the person to confirm in the app before it acts. Take people off a quiz by their assignment ids; the confirmation names each person removed. Nobody is emailed.",
+      "annotations": {
+        "title": "Remove People from Quiz",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
       }
     },
     {
@@ -1748,7 +2336,7 @@
     {
       "name": "update_company",
       "title": "Update Company",
-      "description": "Asks the person to confirm in the app before it acts. Change a company's details, its Custom Fields included. Only the fields you name are touched.",
+      "description": "Asks the person to confirm in the app before it acts. Change a company's details, its address and Custom Fields included. Only the fields you name are touched.",
       "annotations": {
         "title": "Update Company",
         "readOnlyHint": false,
@@ -1775,6 +2363,18 @@
       "description": "Asks the person to confirm in the app before it acts. Edit a deal's details (title, value, expected close, contact, followers); only the fields you name.",
       "annotations": {
         "title": "Update Deal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "update_document_draft",
+      "title": "Update Draft Document",
+      "description": "Asks the person to confirm in the app before it acts. Replace a draft document's whole content. Call without body first to get it, then send it back changed.",
+      "annotations": {
+        "title": "Update Draft Document",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
@@ -1947,6 +2547,18 @@
         "destructiveHint": false,
         "idempotentHint": true,
         "openWorldHint": false
+      }
+    },
+    {
+      "name": "void_document",
+      "title": "Void Document",
+      "description": "Asks the person to confirm in the app before it acts. Void a document so it can no longer be signed: its waiting signers are closed and everyone it asked is emailed.",
+      "annotations": {
+        "title": "Void Document",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
       }
     }
   ]
