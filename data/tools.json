@@ -1,6 +1,8 @@
 {
-  "serverVersion": "1.0.2",
+  "serverVersion": "1.1.0",
   "protocolVersions": [
+    "2026-07-28",
+    "2025-11-25",
     "2025-06-18",
     "2025-03-26"
   ],
@@ -86,6 +88,18 @@
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "add_task_follower",
+      "title": "Add Task Follower",
+      "description": "Asks the person to confirm in the app before it acts. Add one person to a task's followers, by the user id find_colleague gives; followers are sent its comments.",
+      "annotations": {
+        "title": "Add Task Follower",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
         "openWorldHint": true
       }
     },
@@ -272,7 +286,7 @@
     {
       "name": "bill_task",
       "title": "Bill Task",
-      "description": "Asks the person to confirm in the app before it acts. Bill a task onto a new or draft invoice or accumulating generator as a $0.00 line; takes no amount or due date.",
+      "description": "Asks the person to confirm in the app before it acts. Bill a task: put it on a new or draft invoice or accumulating generator as a $0.00 line; takes no amount or due date.",
       "annotations": {
         "title": "Bill Task",
         "readOnlyHint": false,
@@ -386,6 +400,18 @@
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "convert_task_to_re_task",
+      "title": "Convert Task to RE: Task",
+      "description": "Asks the person to confirm in the app before it acts. Make a task an RE: Task about a CRM contact or company: it is retitled \"RE: name:\" and leaves its project.",
+      "annotations": {
+        "title": "Convert Task to RE: Task",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
         "openWorldHint": true
       }
     },
@@ -608,7 +634,7 @@
     {
       "name": "create_task",
       "title": "Create Task",
-      "description": "Asks the person to confirm in the app before it acts. Raise a task for someone in this account. It makes a task of its own, never a subtask of another.",
+      "description": "Asks the person to confirm in the app before it acts. Raise a task for someone in this account, in a project or not. It makes a task of its own, never a subtask of another.",
       "annotations": {
         "title": "Create Task",
         "readOnlyHint": false,
@@ -786,6 +812,18 @@
       }
     },
     {
+      "name": "delete_subtask",
+      "title": "Delete Subtask",
+      "description": "Asks the person to confirm in the app before it acts. Delete one subtask (a checklist step) of a task, each named by its title or id; restore_subtask brings it back.",
+      "annotations": {
+        "title": "Delete Subtask",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "delete_task",
       "title": "Delete Task",
       "description": "Asks the person to confirm in the app before it acts. Delete a task, as the person asking could on the task screen. Its files and subtasks go with it.",
@@ -794,6 +832,18 @@
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "delete_task_comment",
+      "title": "Delete Task Comment",
+      "description": "Asks the person to confirm in the app before it acts. Delete a comment the person wrote on a task, by its id, its words, or else their newest; never the Agent's own.",
+      "annotations": {
+        "title": "Delete Task Comment",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
         "openWorldHint": true
       }
     },
@@ -1206,6 +1256,18 @@
       }
     },
     {
+      "name": "link_task_start_date",
+      "title": "Link Task Start Date",
+      "description": "Asks the person to confirm in the app before it acts. Link a task's Start Date to the Due Date of another task in its project, with days of lag.",
+      "annotations": {
+        "title": "Link Task Start Date",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "link_text_number_to_contact",
       "title": "Link Text Number to Contact",
       "description": "Asks the person to confirm in the app before it acts. Link an unknown number's text conversations to a contact, as Link to Contact in the text inbox does.",
@@ -1259,6 +1321,18 @@
       "description": "Asks the person to confirm in the app before it acts. Move a deal to another stage of its pipeline, which runs that stage's automations.",
       "annotations": {
         "title": "Move Deal",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "move_subtask",
+      "title": "Move Subtask",
+      "description": "Asks the person to confirm in the app before it acts. Move one subtask (a checklist step) of a task to another place in its list, or put it first; 1 is the top.",
+      "annotations": {
+        "title": "Move Subtask",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
@@ -1758,6 +1832,42 @@
       }
     },
     {
+      "name": "remove_task_dependency",
+      "title": "Remove Task Dependency",
+      "description": "Asks the person to confirm in the app before it acts. Remove a task's dependency, so it no longer waits on the other task, hidden or locked.",
+      "annotations": {
+        "title": "Remove Task Dependency",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "remove_task_follower",
+      "title": "Remove Task Follower",
+      "description": "Asks the person to confirm in the app before it acts. Remove one person from a task's followers; subtasks they hold go back to its assignee only when asked to.",
+      "annotations": {
+        "title": "Remove Task Follower",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "remove_task_recurrence",
+      "title": "Remove Task Recurrence",
+      "description": "Asks the person to confirm in the app before it acts. Stop a recurring task: it no longer repeats or recurs, and the copies already made stay.",
+      "annotations": {
+        "title": "Remove Task Recurrence",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
       "name": "reopen_deal",
       "title": "Reopen Deal",
       "description": "Asks the person to confirm in the app before it acts. Reopen a won or lost deal, so it is open again in its stage.",
@@ -1835,6 +1945,18 @@
       "description": "Asks the person to confirm in the app before it acts. Bring an archived project back onto the Projects list.",
       "annotations": {
         "title": "Restore Archived Project",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "restore_subtask",
+      "title": "Restore Subtask",
+      "description": "Asks the person to confirm in the app before it acts. Bring back a deleted subtask (a checklist step) of a task, each named by its title or id.",
+      "annotations": {
+        "title": "Restore Subtask",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
@@ -2202,11 +2324,47 @@
       }
     },
     {
+      "name": "set_task_dependency",
+      "title": "Set Task Dependency",
+      "description": "Asks the person to confirm in the app before it acts. Make a task wait on another of its project: hide or lock it from edits until that one reaches a status, e.g. Completed.",
+      "annotations": {
+        "title": "Set Task Dependency",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "set_task_priority",
       "title": "Set Task Priority",
       "description": "Asks the person to confirm in the app before it acts. Set a task's priority (urgent, high, normal, low or the account's own) by its title or id.",
       "annotations": {
         "title": "Set Task Priority",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "set_task_recurrence",
+      "title": "Set Task Recurrence",
+      "description": "Asks the person to confirm in the app before it acts. Make a task recur, repeat or come back every day, week, month or year (daily, weekly, monthly, yearly), or change it.",
+      "annotations": {
+        "title": "Set Task Recurrence",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "set_task_time_spent",
+      "title": "Set Task Time Spent",
+      "description": "Asks the person to confirm in the app before it acts. Set a task's Time Spent to the hours given, or to the time tracked on it by its timers.",
+      "annotations": {
+        "title": "Set Task Time Spent",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
@@ -2310,6 +2468,18 @@
       }
     },
     {
+      "name": "undo_task_change",
+      "title": "Undo Task Change",
+      "description": "Asks the person to confirm in the app before it acts. Take back the person's latest change of a task, as its Undo does, unless someone changed it again since.",
+      "annotations": {
+        "title": "Undo Task Change",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "unlink_contact_from_company",
       "title": "Unlink Contact from Company",
       "description": "Asks the person to confirm in the app before it acts. Unlink a contact from their company, as Remove on its contact list does; they leave the company's circle.",
@@ -2318,6 +2488,30 @@
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "unlink_re_task",
+      "title": "Unlink RE: Task",
+      "description": "Asks the person to confirm in the app before it acts. Unlink an RE: Task from the CRM contact or company it is about; the task keeps its title.",
+      "annotations": {
+        "title": "Unlink RE: Task",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "unlink_task_start_date",
+      "title": "Unlink Task Start Date",
+      "description": "Asks the person to confirm in the app before it acts. Unlink a task's Start Date from the other task's Due Date it follows; the task keeps its dates.",
+      "annotations": {
+        "title": "Unlink Task Start Date",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
         "openWorldHint": true
       }
     },
@@ -2490,14 +2684,38 @@
       }
     },
     {
+      "name": "update_subtask",
+      "title": "Update Subtask",
+      "description": "Asks the person to confirm in the app before it acts. Tick, reopen, rename or reassign one subtask (a checklist step) of a task, each named by its title or id.",
+      "annotations": {
+        "title": "Update Subtask",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
       "name": "update_task",
       "title": "Update Task",
-      "description": "Asks the person to confirm in the app before it acts. Complete a task, hand it to someone else, or move its due date.",
+      "description": "Asks the person to confirm in the app before it acts. Mark a task complete, hand it over to someone else, or move its due date.",
       "annotations": {
         "title": "Update Task",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "update_task_comment",
+      "title": "Update Task Comment",
+      "description": "Asks the person to confirm in the app before it acts. Rewrite a comment the person wrote on a task, by its id, its words, or else their newest; never the Agent's own.",
+      "annotations": {
+        "title": "Update Task Comment",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
         "openWorldHint": true
       }
     },
