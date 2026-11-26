@@ -2,11 +2,11 @@
 
 This list is generated from the live SuiteDash MCP server's tool definitions. Nobody edits it by hand.
 
-Last updated: 2026-11-25 (UTC).
+Last updated: 2026-11-26 (UTC).
 
 The server's own `tools/list` is always authoritative. Your A.I. app loads the live list each time it connects, and each person is offered only the tools an admin switched on for them that the account's plan includes.
 
-More than 210 tools: 75 read and 138 that change data.
+More than 230 tools: 75 read and 156 that change data.
 
 Kind: **Read** finds or reads something and changes nothing. **Changes data** creates, updates, sends or removes something in your account. **Changes data, asks first** means the person is asked to confirm in the app before the tool acts.
 
@@ -14,7 +14,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 
 - [CRM](#crm) (42)
 - [Deals](#deals) (10)
-- [Projects and tasks](#projects-and-tasks) (26)
+- [Projects and tasks](#projects-and-tasks) (44)
 - [Time tracking](#time-tracking) (21)
 - [Invoicing and payments](#invoicing-and-payments) (35)
 - [Expenses](#expenses) (7)
@@ -96,31 +96,49 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | Name | Title | What it does | Kind |
 |---|---|---|---|
 | `add_subtask` | Add Subtask | Add a subtask (a checklist step) under a task named by its title or id; it goes to that task's assignee. | Changes data, asks first |
+| `add_task_follower` | Add Task Follower | Add one person to a task's followers, by the user id find_colleague gives; followers are sent its comments. | Changes data, asks first |
 | `apply_project_template` | Apply Task Template to Project | Apply one of the account's task templates to a project, dated from a chosen day. | Changes data, asks first |
 | `archive_project` | Archive Project | Archive a project off the Projects list; restore_project brings it back. | Changes data, asks first |
 | `archive_work_request` | Archive Work Request | Archive a client's work request, moving it off the Work Requests list; restore_work_request brings it back. | Changes data, asks first |
-| `bill_task` | Bill Task | Bill a task onto a new or draft invoice or accumulating generator as a $0.00 line; takes no amount or due date. | Changes data, asks first |
+| `bill_task` | Bill Task | Bill a task: put it on a new or draft invoice or accumulating generator as a $0.00 line; takes no amount or due date. | Changes data, asks first |
 | `comment_on_task` | Comment on Task | Post a comment on a task, named by its title or id; its assignee and followers are told. | Changes data, asks first |
+| `convert_task_to_re_task` | Convert Task to RE: Task | Make a task an RE: Task about a CRM contact or company: it is retitled "RE: name:" and leaves its project. | Changes data, asks first |
 | `convert_work_request_to_estimate` | Convert Work Request to Estimate | Convert a work request into a new or existing estimate or quote; items become lines, and the client may be emailed. | Changes data, asks first |
 | `convert_work_request_to_invoice` | Convert Work Request to Invoice | Convert a work request into a new or existing invoice; items become lines, and the client may be emailed a link. | Changes data, asks first |
 | `convert_work_request_to_project` | Convert Work Request to Project | Convert a work request into a new or existing project; items become tasks, and the client may be emailed a link. | Changes data, asks first |
 | `create_project` | Create Project | Start a project for a client. Dates are written the way this account writes them. | Changes data, asks first |
-| `create_task` | Create Task | Raise a task for someone in this account. It makes a task of its own, never a subtask of another. | Changes data, asks first |
+| `create_task` | Create Task | Raise a task for someone in this account, in a project or not. It makes a task of its own, never a subtask of another. | Changes data, asks first |
 | `delete_project` | Delete Project | Delete a project as the person asking could on the project screen. Its tasks, files and phases are retired with it. | Changes data, asks first |
+| `delete_subtask` | Delete Subtask | Delete one subtask (a checklist step) of a task, each named by its title or id; restore_subtask brings it back. | Changes data, asks first |
 | `delete_task` | Delete Task | Delete a task, as the person asking could on the task screen. Its files and subtasks go with it. | Changes data, asks first |
+| `delete_task_comment` | Delete Task Comment | Delete a comment the person wrote on a task, by its id, its words, or else their newest; never the Agent's own. | Changes data, asks first |
 | `duplicate_project` | Duplicate Project | Start a copy of a project with its tasks and team; it is made in the background. | Changes data, asks first |
 | `find_project` | Find Projects | Find or list projects by name, oldest or newest first, on the Projects list of the person asking. Use before its id. | Read |
 | `find_task` | Find Tasks | Find or list tasks by title, oldest or newest first, or one project's, on the person's task lists. Use before its id. | Read |
 | `find_work_request` | Find Work Requests | Find clients' work requests by name, client, status or day they came in, newest or oldest first: what awaits triage. | Read |
+| `link_task_start_date` | Link Task Start Date | Link a task's Start Date to the Due Date of another task in its project, with days of lag. | Changes data, asks first |
+| `move_subtask` | Move Subtask | Move one subtask (a checklist step) of a task to another place in its list, or put it first; 1 is the top. | Changes data, asks first |
 | `read_project` | Get Project Details | Read one project as the person asking could open it: open tasks, Custom Fields, and who its tasks can be assigned to. | Read |
 | `read_task` | Get Task Details | Read one task in full, its project and who it is assigned to, when the person asking sees it on one of their task lists. | Read |
 | `read_work_request` | Get Work Request Details | Read one client's work request: what was asked, its items, answers, messages, price and what it converted to. | Read |
+| `remove_task_dependency` | Remove Task Dependency | Remove a task's dependency, so it no longer waits on the other task, hidden or locked. | Changes data, asks first |
+| `remove_task_follower` | Remove Task Follower | Remove one person from a task's followers; subtasks they hold go back to its assignee only when asked to. | Changes data, asks first |
+| `remove_task_recurrence` | Remove Task Recurrence | Stop a recurring task: it no longer repeats or recurs, and the copies already made stay. | Changes data, asks first |
 | `restore_project` | Restore Archived Project | Bring an archived project back onto the Projects list. | Changes data, asks first |
+| `restore_subtask` | Restore Subtask | Bring back a deleted subtask (a checklist step) of a task, each named by its title or id. | Changes data, asks first |
 | `restore_work_request` | Restore Archived Work Request | Bring an archived work request back to the Work Requests list, in the status it held. | Changes data, asks first |
 | `set_project_status` | Set Project Status | Set a project's status to one of the account's own; Completed finishes it. | Changes data, asks first |
+| `set_task_dependency` | Set Task Dependency | Make a task wait on another of its project: hide or lock it from edits until that one reaches a status, e.g. Completed. | Changes data, asks first |
 | `set_task_priority` | Set Task Priority | Set a task's priority (urgent, high, normal, low or the account's own) by its title or id. | Changes data, asks first |
+| `set_task_recurrence` | Set Task Recurrence | Make a task recur, repeat or come back every day, week, month or year (daily, weekly, monthly, yearly), or change it. | Changes data, asks first |
+| `set_task_time_spent` | Set Task Time Spent | Set a task's Time Spent to the hours given, or to the time tracked on it by its timers. | Changes data, asks first |
+| `undo_task_change` | Undo Task Change | Take back the person's latest change of a task, as its Undo does, unless someone changed it again since. | Changes data, asks first |
+| `unlink_re_task` | Unlink RE: Task | Unlink an RE: Task from the CRM contact or company it is about; the task keeps its title. | Changes data, asks first |
+| `unlink_task_start_date` | Unlink Task Start Date | Unlink a task's Start Date from the other task's Due Date it follows; the task keeps its dates. | Changes data, asks first |
 | `update_project` | Update Project | Change a project's details, its Custom Fields included. Only the fields you name are touched; the client is not one. | Changes data, asks first |
-| `update_task` | Update Task | Complete a task, hand it to someone else, or move its due date. | Changes data, asks first |
+| `update_subtask` | Update Subtask | Tick, reopen, rename or reassign one subtask (a checklist step) of a task, each named by its title or id. | Changes data, asks first |
+| `update_task` | Update Task | Mark a task complete, hand it over to someone else, or move its due date. | Changes data, asks first |
+| `update_task_comment` | Update Task Comment | Rewrite a comment the person wrote on a task, by its id, its words, or else their newest; never the Agent's own. | Changes data, asks first |
 
 ## Time tracking
 
