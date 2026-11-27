@@ -1761,10 +1761,10 @@
     },
     {
       "name": "record_payment",
-      "title": "Record Payment",
-      "description": "Asks the person to confirm in the app before it acts. Record money received on an invoice: it can email the client a receipt, run paid automations and grant access.",
+      "title": "Record Invoice Settlement",
+      "description": "Asks the person to confirm in the app before it acts. Record a completed invoice settlement without collecting funds. May send receipts, run automations, or grant access.",
       "annotations": {
-        "title": "Record Payment",
+        "title": "Record Invoice Settlement",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": false,

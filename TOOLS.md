@@ -196,7 +196,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `read_proposal` | Get Proposal Details | Read one proposal (status, value, valid until, recipients, pages, reminders) when the person sees it on the list. | Read |
 | `read_sales_room` | Get Sales Room Details | Read one Sales Room: its prospect, design, active or revoked status, private link, when they last opened it. | Read |
 | `read_subscription` | Get Subscription Details | Read one client's subscription: what it bills, how often, its next bill date, status, tax and discount. | Read |
-| `record_payment` | Record Payment | Record money received on an invoice: it can email the client a receipt, run paid automations and grant access. | Changes data, asks first |
+| `record_payment` | Record Invoice Settlement | Record a completed invoice settlement without collecting funds. May send receipts, run automations, or grant access. | Changes data, asks first |
 | `resend_invoice` | Resend Invoice | Email an open or partly paid invoice to its client again, as a reminder to pay it. | Changes data, asks first |
 | `revoke_sales_room` | Revoke Sales Room | Revoke a prospect's Sales Room link so it stops working; it can be reactivated later. | Changes data, asks first |
 | `send_estimate` | Send Estimate | Send an estimate to the people on it: a draft opens, and each of them is emailed it to approve. | Changes data, asks first |
