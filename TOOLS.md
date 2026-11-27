@@ -43,15 +43,15 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `create_company` | Create Company | Add a company to the CRM, only when the person asks to add one. Needs an existing contact to represent it. | Changes data, asks first |
 | `create_contact` | Create Contact | Add a person to the CRM, at an existing company when the person names one. | Changes data, asks first |
 | `create_follow_up` | Create Follow-Up | Set a follow-up with a contact, as Add Follow-Up does; on their calendar, it can email them. | Changes data, asks first |
-| `create_note` | Create Note | Leave a note on a contact, a company or a project. | Changes data, asks first |
+| `create_note` | Create Note | Leave a note on a contact, a company, a project or a deal. | Changes data, asks first |
 | `delete_circle` | Delete Circle | Delete a circle for good; its members lose its portal access. | Changes data, asks first |
 | `delete_company` | Delete or Deactivate Company | Set an active company inactive, or delete an inactive or idle one for good, as its CRM list does for the person asking. | Changes data, asks first |
 | `delete_contact` | Deactivate Contact | Set a contact inactive, as Set Inactive on the CRM screen does for the person asking; their portal login closes too. | Changes data, asks first |
 | `delete_follow_up` | Delete Follow-Up | Delete a follow-up for good; it leaves its calendars. | Changes data, asks first |
 | `delete_note` | Delete Note | Delete a note as the note screen lets the person asking; a note that came from a support ticket stays. | Changes data, asks first |
 | `find_circle` | Find Circles | Find or list circles by name, oldest or newest first, as the Circles list shows them. Use before a circle id. | Read |
-| `find_company` | Find Companies | Find or list companies by name, oldest or newest first, as the company list shows them. Use before a company id. | Read |
-| `find_contact` | Find Contacts | Find or list contacts by name, email address or role, oldest or newest first, as the list shows them. Use before an id. | Read |
+| `find_company` | Find Companies | Find or list companies by name, category, tag, role, salesperson, coordinator, idle or inactive, oldest or newest first. | Read |
+| `find_contact` | Find Contacts | Find or list contacts by name, email, role, tag, company, salesperson, coordinator, circle, custom field or when added. | Read |
 | `find_follow_up` | Find Follow-Ups | Find or list follow-ups by status, category, contact, host, due dates or name, or oldest or newest first. | Read |
 | `find_note` | Find Notes | Find or list notes by title on a contact, company or project, or on every one, oldest or newest first, as tabs show. | Read |
 | `link_contact_to_company` | Link Contact to Company | Link a contact in no company to a company, as Add Contact on its page does; it can email them the circle's files. | Changes data, asks first |
@@ -72,7 +72,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `unlink_contact_from_company` | Unlink Contact from Company | Unlink a contact from their company, as Remove on its contact list does; they leave the company's circle. | Changes data, asks first |
 | `update_circle` | Update Circle | Change a circle's name, description or color (only the fields you name); members change through their own tools. | Changes data, asks first |
 | `update_company` | Update Company | Change a company's details, its address and Custom Fields included. Only the fields you name are touched. | Changes data, asks first |
-| `update_contact` | Update Contact | Change a contact's details, company and Custom Fields included. Only the fields you name are touched; role is not one. | Changes data, asks first |
+| `update_contact` | Update Contact | Change a contact's details, company, address, WORLDs or Custom Fields; only fields you name change, never the role. | Changes data, asks first |
 | `update_follow_up` | Update Follow-Up | Change or reschedule a follow-up to another day or time, only the fields you name; its calendars follow. | Changes data, asks first |
 | `update_note` | Update Note | Change a note's message or title, as the note screen lets the person asking. Who can see it is not touched. | Changes data, asks first |
 
@@ -83,7 +83,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `close_deal` | Close Deal | Close a deal as won or lost, marking the sale won or the opportunity lost. | Changes data, asks first |
 | `create_deal` | Create Deal | Add a new sales deal (opportunity) for a contact in a pipeline: its value, expected close and stage. | Changes data, asks first |
 | `delete_deal` | Delete Deal | Delete a deal for good; it leaves the pipeline board and the Deals list. | Changes data, asks first |
-| `find_deal` | Find Deals | Find or list deals by title, contact, pipeline, stage, category, close date, amount, oldest or newest first. | Read |
+| `find_deal` | Find Deals | Find or list deals by title, contact, pipeline, stage, category, close date, amount, result, followed, oldest or newest. | Read |
 | `move_deal` | Move Deal | Move a deal to another stage of its pipeline, which runs that stage's automations. | Changes data, asks first |
 | `read_deal` | Get Deal Details | Read one deal: how likely it is, amount, pipeline stage, won or lost, close date, contact, who follows it, history. | Read |
 | `read_deal_activity` | Read Deal Activity | Read the latest activity on deals the person follows: moves, wins, losses and changes, newest first. | Read |
@@ -107,7 +107,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `convert_work_request_to_invoice` | Convert Work Request to Invoice | Convert a work request into a new or existing invoice; items become lines, and the client may be emailed a link. | Changes data, asks first |
 | `convert_work_request_to_project` | Convert Work Request to Project | Convert a work request into a new or existing project; items become tasks, and the client may be emailed a link. | Changes data, asks first |
 | `create_project` | Create Project | Start a project for a client. Dates are written the way this account writes them. | Changes data, asks first |
-| `create_task` | Create Task | Raise a task for someone in this account, in a project or not. It makes a task of its own, never a subtask of another. | Changes data, asks first |
+| `create_task` | Create Task | Raise a task in a project or not, never a subtask: phase, type, start, tags, followers, waiting link, price, switches. | Changes data, asks first |
 | `delete_project` | Delete Project | Delete a project as the person asking could on the project screen. Its tasks, files and phases are retired with it. | Changes data, asks first |
 | `delete_subtask` | Delete Subtask | Delete one subtask (a checklist step) of a task, each named by its title or id; restore_subtask brings it back. | Changes data, asks first |
 | `delete_task` | Delete Task | Delete a task, as the person asking could on the task screen. Its files and subtasks go with it. | Changes data, asks first |
@@ -135,9 +135,9 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `undo_task_change` | Undo Task Change | Take back the person's latest change of a task, as its Undo does, unless someone changed it again since. | Changes data, asks first |
 | `unlink_re_task` | Unlink RE: Task from Contact | Unlink an RE: Task, a task related to a CRM contact or company, from that contact or company; it keeps its title. | Changes data, asks first |
 | `unlink_task_start_date` | Unlink Task Start Date | Unlink a task's Start Date from the other task's Due Date it follows; the task keeps its dates. | Changes data, asks first |
-| `update_project` | Update Project | Change a project's details, its Custom Fields included. Only the fields you name are touched; the client is not one. | Changes data, asks first |
+| `update_project` | Update Project | Change a project's details, leader, rate, billing, Custom Fields; add assigned people (emailed) or take them off (bell). | Changes data, asks first |
 | `update_subtask` | Update Subtask | Tick, reopen, rename or reassign one subtask (a checklist step) of a task, each named by its title or id. | Changes data, asks first |
-| `update_task` | Update Task | Mark a task complete, hand it over to someone else, or move its due date. | Changes data, asks first |
+| `update_task` | Update Task | Complete a task, hand it over, move its dates, project or phase; link, tag; set hourly rate, followers, approval, lock. | Changes data, asks first |
 | `update_task_comment` | Update Task Comment | Rewrite a comment the person wrote on a task, by its id, its words, or else their newest; never the Agent's own. | Changes data, asks first |
 
 ## Time tracking
@@ -164,7 +164,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `set_timer_day` | Set Timer Hours for One Day | Set a timer's total hours for one day, such as 3.5; refused below the hours billed that day or while it runs that day. | Changes data, asks first |
 | `start_timer` | Start Timer | Start a running timer now in the person's own name at their own rate (takes no rate), beside any already running. | Changes data, asks first |
 | `update_time_entry` | Update Time Entry | Correct one stretch of a timer by its id from read_timer; one running or on an invoice is refused. | Changes data, asks first |
-| `update_timer` | Update Timer | Rename a timer, or change its hourly rate or note; a new rate reprices its tracked time. | Changes data, asks first |
+| `update_timer` | Update Timer | Rename a timer, change its rate, note or billable switch, or tag it and take off tags; a new rate reprices tracked time. | Changes data, asks first |
 
 ## Invoicing and payments
 
@@ -179,16 +179,16 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `delete_estimate` | Delete Draft Estimate | Delete a draft estimate as the estimate list's Delete lets the person asking. One already sent or approved stays. | Changes data, asks first |
 | `delete_invoice_draft` | Delete Draft Invoice | Delete a draft invoice as the invoice list's Delete lets the person asking. Anything already sent or paid stays. | Changes data, asks first |
 | `delete_proposal` | Delete Draft Proposal | Delete a draft proposal as the proposal list's Delete lets the person asking. One already sent or signed stays. | Changes data, asks first |
-| `find_estimate` | Find Estimates | Find or list estimates by title, number or client, oldest or newest first, as the person sees them. Use before an id. | Read |
+| `find_estimate` | Find Estimates | Find or list estimates by title, number, client, status, valid-until date, total or viewed date, oldest or newest first. | Read |
 | `find_invoice` | Find Invoices | Find or list invoices by title, number or client, oldest or newest first, as the person sees them. Use before an id. | Read |
 | `find_item` | Find Items | Find or list catalog items by name, oldest or newest first, as the invoice and estimate line picker offers them. | Read |
 | `find_payment` | Find Payments | Find or list payments received on invoices and subscriptions by payer, method, day, transaction id or when recorded. | Read |
-| `find_proposal` | Find Proposals | Find or list proposals by title or client, oldest or newest first, as the person sees them. Use before a proposal id. | Read |
+| `find_proposal` | Find Proposals | Find or list proposals by title, client, status, valid-until date, value or owner, oldest or newest first. | Read |
 | `find_sales_room` | Find Sales Rooms | Find or list prospects' Sales Rooms (private links to a sales page design) by contact, design, status, oldest or newest. | Read |
 | `find_subscription` | Find Subscriptions | Find or list clients' recurring subscriptions by number, client, plan or status, oldest or newest first. | Read |
 | `generate_sales_room` | Generate Sales Room for Contact | Generate a contact's own Sales Room from a design and, as the design says, email them its private link. | Changes data, asks first |
 | `reactivate_sales_room` | Activate Revoked Sales Room | Reactivate a revoked Sales Room so the prospect's same link works again. | Changes data, asks first |
-| `read_client_balance` | Get Client Balances | See a client's prepaid balance: credit, prepaid hours, prepaid sessions left. Give the client's name or id. | Read |
+| `read_client_balance` | Get Client Balances | See a client's prepaid balances and their history: credit, prepaid hours, sessions left. Give the client's name or id. | Read |
 | `read_estimate` | Get Estimate Details | Read one estimate: lines, totals, paid, balance due, notes and Custom Fields, when the person's estimate list shows it. | Read |
 | `read_invoice` | Get Invoice Details | Read one invoice: lines, totals, paid, balance due, notes and Custom Fields, when the person's invoice list shows it. | Read |
 | `read_item` | Get Item Details | Read one catalog item (rate, quantity, discount, tax, descriptions, pricing options) as the Items screen shows it. | Read |
@@ -211,12 +211,12 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | Name | Title | What it does | Kind |
 |---|---|---|---|
 | `bill_expense` | Bill Expense | Bill an unbilled expense to its client on a new draft invoice, never sent; it marks the expense Invoiced. | Changes data, asks first |
-| `create_expense` | Create Expense | Record a one-time business expense (a cost or receipt): what it was, its amount and date, a client to bill it to. | Changes data |
+| `create_expense` | Create Expense | Record a one-time expense: what it was, its amount, currency, date and lines, and a client and project to bill it to. | Changes data |
 | `delete_expense` | Delete Expense | Delete an expense for good; one already billed on an invoice is never deleted. | Changes data, asks first |
 | `find_expense` | Find Expenses | Find or list business expenses (costs, receipts) by title, client, status, date or total, oldest or newest first. | Read |
 | `make_expense_recurring` | Convert Expense to Recurring | Turn a one-time expense into a recurring expense on a schedule: a recurring copy, left as a draft. | Changes data, asks first |
 | `read_expense` | Get Expense Details | Read one expense: its cost lines, total, billed or unbilled, who it is assigned to, receipt date, recurring schedule. | Read |
-| `update_expense` | Update Expense | Edit an expense's details (title, amount, date, client, billable, category); only the fields you name. | Changes data, asks first |
+| `update_expense` | Update Expense | Edit an expense (title, amount, date, billable, client, project, currency, category, lines); only the fields you name. | Changes data, asks first |
 
 ## Documents and signatures
 
@@ -239,7 +239,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 |---|---|---|---|
 | `add_ticket_note` | Add Support Ticket Note | Write a staff-only note on a support conversation; only staff read it, never the client. | Changes data, asks first |
 | `assign_ticket` | Assign Support Ticket | Give a support conversation to a colleague; the colleague is emailed unless it is the person asking. | Changes data, asks first |
-| `find_ticket` | Find Support Tickets | Find or list support conversations by words, number, status or who holds them, as the Support list shows them. | Read |
+| `find_ticket` | Find Support Tickets | Find or list support conversations by words, number, status, priority, tags, labels or who holds them. | Read |
 | `open_ticket` | Create Support Ticket | Start a new support conversation (ticket) for a client; the client is emailed that a ticket was opened for them. | Changes data, asks first |
 | `read_ticket` | Get Support Ticket Details | Read one support conversation: who holds it, who it is for, and the whole thread of what was said, staff-only notes too. | Read |
 | `reply_to_ticket` | Reply to Support Ticket | Answer a support conversation; the client is emailed the reply and reads it in their portal. | Changes data, asks first |
@@ -314,7 +314,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `create_team` | Create Team | Create a team with a name, an optional description and optional members (user ids from find_colleague). | Changes data, asks first |
 | `delete_staff_member` | Deactivate Staff Member | Remove a colleague as the staff screen's Set Inactive does: the login closes, the record stays and can be restored. | Changes data, asks first |
 | `delete_team` | Delete Team | Delete a team as the Teams list's Delete does: it leaves the list and its team chat channel is removed. | Changes data, asks first |
-| `find_colleague` | Find Staff Members | Find or list colleagues by name or email, oldest or newest first, as the staff roster shows them. Use before a user id. | Read |
+| `find_colleague` | Find Staff Members | Find or list colleagues by name or email, role, job title or last visit, oldest or newest first. Use before a user id. | Read |
 | `find_team` | Find Teams | Find or list teams by name, oldest or newest first, as the Teams list shows them. Use before anything needing a team id. | Read |
 | `read_colleague` | Get Staff Member Details | Read one colleague's record (role, email, last visit, Custom Fields) as the staff roster shows them to the person. | Read |
 | `read_team` | Get Team Details | Read one team (its description and the colleagues on it) as the Teams page shows it to the person asking. | Read |
