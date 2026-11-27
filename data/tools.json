@@ -538,7 +538,7 @@
     {
       "name": "create_expense",
       "title": "Create Expense",
-      "description": "Record a one-time business expense (a cost or receipt): what it was, its amount and date, a client to bill it to.",
+      "description": "Record a one-time expense: what it was, its amount, currency, date and lines, and a client and project to bill it to.",
       "annotations": {
         "title": "Create Expense",
         "readOnlyHint": false,
@@ -586,7 +586,7 @@
     {
       "name": "create_note",
       "title": "Create Note",
-      "description": "Asks the person to confirm in the app before it acts. Leave a note on a contact, a company or a project.",
+      "description": "Asks the person to confirm in the app before it acts. Leave a note on a contact, a company, a project or a deal.",
       "annotations": {
         "title": "Create Note",
         "readOnlyHint": false,
@@ -634,7 +634,7 @@
     {
       "name": "create_task",
       "title": "Create Task",
-      "description": "Asks the person to confirm in the app before it acts. Raise a task for someone in this account, in a project or not. It makes a task of its own, never a subtask of another.",
+      "description": "Asks the person to confirm in the app before it acts. Raise a task in a project or not, never a subtask: phase, type, start, tags, followers, waiting link, price, switches.",
       "annotations": {
         "title": "Create Task",
         "readOnlyHint": false,
@@ -946,7 +946,7 @@
     {
       "name": "find_colleague",
       "title": "Find Staff Members",
-      "description": "Find or list colleagues by name or email, oldest or newest first, as the staff roster shows them. Use before a user id.",
+      "description": "Find or list colleagues by name or email, role, job title or last visit, oldest or newest first. Use before a user id.",
       "annotations": {
         "title": "Find Staff Members",
         "readOnlyHint": true,
@@ -958,7 +958,7 @@
     {
       "name": "find_company",
       "title": "Find Companies",
-      "description": "Find or list companies by name, oldest or newest first, as the company list shows them. Use before a company id.",
+      "description": "Find or list companies by name, category, tag, role, salesperson, coordinator, idle or inactive, oldest or newest first.",
       "annotations": {
         "title": "Find Companies",
         "readOnlyHint": true,
@@ -970,7 +970,7 @@
     {
       "name": "find_contact",
       "title": "Find Contacts",
-      "description": "Find or list contacts by name, email address or role, oldest or newest first, as the list shows them. Use before an id.",
+      "description": "Find or list contacts by name, email, role, tag, company, salesperson, coordinator, circle, custom field or when added.",
       "annotations": {
         "title": "Find Contacts",
         "readOnlyHint": true,
@@ -982,7 +982,7 @@
     {
       "name": "find_deal",
       "title": "Find Deals",
-      "description": "Find or list deals by title, contact, pipeline, stage, category, close date, amount, oldest or newest first.",
+      "description": "Find or list deals by title, contact, pipeline, stage, category, close date, amount, result, followed, oldest or newest.",
       "annotations": {
         "title": "Find Deals",
         "readOnlyHint": true,
@@ -1018,7 +1018,7 @@
     {
       "name": "find_estimate",
       "title": "Find Estimates",
-      "description": "Find or list estimates by title, number or client, oldest or newest first, as the person sees them. Use before an id.",
+      "description": "Find or list estimates by title, number, client, status, valid-until date, total or viewed date, oldest or newest first.",
       "annotations": {
         "title": "Find Estimates",
         "readOnlyHint": true,
@@ -1114,7 +1114,7 @@
     {
       "name": "find_proposal",
       "title": "Find Proposals",
-      "description": "Find or list proposals by title or client, oldest or newest first, as the person sees them. Use before a proposal id.",
+      "description": "Find or list proposals by title, client, status, valid-until date, value or owner, oldest or newest first.",
       "annotations": {
         "title": "Find Proposals",
         "readOnlyHint": true,
@@ -1186,7 +1186,7 @@
     {
       "name": "find_ticket",
       "title": "Find Support Tickets",
-      "description": "Find or list support conversations by words, number, status or who holds them, as the Support list shows them.",
+      "description": "Find or list support conversations by words, number, status, priority, tags, labels or who holds them.",
       "annotations": {
         "title": "Find Support Tickets",
         "readOnlyHint": true,
@@ -1438,7 +1438,7 @@
     {
       "name": "read_client_balance",
       "title": "Get Client Balances",
-      "description": "See a client's prepaid balance: credit, prepaid hours, prepaid sessions left. Give the client's name or id.",
+      "description": "See a client's prepaid balances and their history: credit, prepaid hours, sessions left. Give the client's name or id.",
       "annotations": {
         "title": "Get Client Balances",
         "readOnlyHint": true,
@@ -2542,7 +2542,7 @@
     {
       "name": "update_contact",
       "title": "Update Contact",
-      "description": "Asks the person to confirm in the app before it acts. Change a contact's details, company and Custom Fields included. Only the fields you name are touched; role is not one.",
+      "description": "Asks the person to confirm in the app before it acts. Change a contact's details, company, address, WORLDs or Custom Fields; only fields you name change, never the role.",
       "annotations": {
         "title": "Update Contact",
         "readOnlyHint": false,
@@ -2590,7 +2590,7 @@
     {
       "name": "update_expense",
       "title": "Update Expense",
-      "description": "Asks the person to confirm in the app before it acts. Edit an expense's details (title, amount, date, client, billable, category); only the fields you name.",
+      "description": "Asks the person to confirm in the app before it acts. Edit an expense (title, amount, date, billable, client, project, currency, category, lines); only the fields you name.",
       "annotations": {
         "title": "Update Expense",
         "readOnlyHint": false,
@@ -2638,7 +2638,7 @@
     {
       "name": "update_project",
       "title": "Update Project",
-      "description": "Asks the person to confirm in the app before it acts. Change a project's details, its Custom Fields included. Only the fields you name are touched; the client is not one.",
+      "description": "Asks the person to confirm in the app before it acts. Change a project's details, leader, rate, billing, Custom Fields; add assigned people (emailed) or take them off (bell).",
       "annotations": {
         "title": "Update Project",
         "readOnlyHint": false,
@@ -2698,7 +2698,7 @@
     {
       "name": "update_task",
       "title": "Update Task",
-      "description": "Asks the person to confirm in the app before it acts. Mark a task complete, hand it over to someone else, or move its due date.",
+      "description": "Asks the person to confirm in the app before it acts. Complete a task, hand it over, move its dates, project or phase; link, tag; set hourly rate, followers, approval, lock.",
       "annotations": {
         "title": "Update Task",
         "readOnlyHint": false,
@@ -2746,7 +2746,7 @@
     {
       "name": "update_timer",
       "title": "Update Timer",
-      "description": "Asks the person to confirm in the app before it acts. Rename a timer, or change its hourly rate or note; a new rate reprices its tracked time.",
+      "description": "Asks the person to confirm in the app before it acts. Rename a timer, change its rate, note or billable switch, or tag it and take off tags; a new rate reprices tracked time.",
       "annotations": {
         "title": "Update Timer",
         "readOnlyHint": false,
