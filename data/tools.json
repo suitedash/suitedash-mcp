@@ -2397,10 +2397,10 @@
     },
     {
       "name": "set_timer_day",
-      "title": "Set What a Day Comes To",
-      "description": "Asks the person to confirm in the app before it acts. Set what one day of a timer comes to, in hours; below its billed time, or while it runs that day, is refused.",
+      "title": "Set Timer Hours for One Day",
+      "description": "Asks the person to confirm in the app before it acts. Set a timer's total hours for one day, such as 3.5; refused below the hours billed that day or while it runs that day.",
       "annotations": {
-        "title": "Set What a Day Comes To",
+        "title": "Set Timer Hours for One Day",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
