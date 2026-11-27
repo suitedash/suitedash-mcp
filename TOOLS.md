@@ -2,7 +2,7 @@
 
 This list is generated from the live SuiteDash MCP server's tool definitions. Nobody edits it by hand.
 
-Last updated: 2026-11-26 (UTC).
+Last updated: 2026-11-27 (UTC).
 
 The server's own `tools/list` is always authoritative. Your A.I. app loads the live list each time it connects, and each person is offered only the tools an admin switched on for them that the account's plan includes.
 
@@ -161,7 +161,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `restore_time_entry` | Restore Deleted Time Entry | Put back one or several stretches deleted from a timer within the last ten minutes, by the ids they had. | Changes data, asks first |
 | `restore_timer` | Restore Deleted Timer | Bring a deleted timer back onto the Timers page by its title or id, with its time entries. | Changes data, asks first |
 | `resume_timer` | Resume Timer | Run a paused or completed timer again by its title or id; running a completed one clears its Completed. | Changes data, asks first |
-| `set_timer_day` | Set What a Day Comes To | Set what one day of a timer comes to, in hours; below its billed time, or while it runs that day, is refused. | Changes data, asks first |
+| `set_timer_day` | Set Timer Hours for One Day | Set a timer's total hours for one day, such as 3.5; refused below the hours billed that day or while it runs that day. | Changes data, asks first |
 | `start_timer` | Start Timer | Start a running timer now in the person's own name at their own rate (takes no rate), beside any already running. | Changes data, asks first |
 | `update_time_entry` | Update Time Entry | Correct one stretch of a timer by its id from read_timer; one running or on an invoice is refused. | Changes data, asks first |
 | `update_timer` | Update Timer | Rename a timer, or change its hourly rate or note; a new rate reprices its tracked time. | Changes data, asks first |
