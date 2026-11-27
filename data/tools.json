@@ -21,10 +21,10 @@
     },
     {
       "name": "activate_email_cannon",
-      "title": "Activate Email Cannon",
-      "description": "Asks the person to confirm in the app before it acts. Activate a draft Email Cannon so it can be sent to contacts; this emails no one, and an active one is left as it is.",
+      "title": "Activate Email Cannon Template",
+      "description": "Asks the person to confirm in the app before it acts. Activate a draft Email Cannon, a saved email template, so it can be sent; emails no one; an active one is left as it is.",
       "annotations": {
-        "title": "Activate Email Cannon",
+        "title": "Activate Email Cannon Template",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
@@ -405,10 +405,10 @@
     },
     {
       "name": "convert_task_to_re_task",
-      "title": "Convert Task to RE: Task",
-      "description": "Asks the person to confirm in the app before it acts. Make a task an RE: Task about a CRM contact or company: it is retitled \"RE: name:\" and leaves its project.",
+      "title": "Convert Task to Contact RE: Task",
+      "description": "Asks the person to confirm in the app before it acts. Make a task an RE: Task, a task related to a CRM contact or company: it is retitled \"RE: name:\" and leaves its project.",
       "annotations": {
-        "title": "Convert Task to RE: Task",
+        "title": "Convert Task to Contact RE: Task",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,
@@ -1005,10 +1005,10 @@
     },
     {
       "name": "find_email_cannon",
-      "title": "Find Email Cannons",
-      "description": "Find or list Email Cannons by title or status, as the Email Cannons list shows them. Use before a cannon id.",
+      "title": "Find Email Cannon Templates",
+      "description": "Find or list Email Cannons, saved email templates sent to single contacts, by title or status. Use before a cannon id.",
       "annotations": {
-        "title": "Find Email Cannons",
+        "title": "Find Email Cannon Templates",
         "readOnlyHint": true,
         "destructiveHint": false,
         "idempotentHint": true,
@@ -2217,10 +2217,10 @@
     },
     {
       "name": "send_email_cannon",
-      "title": "Send Email Cannon",
-      "description": "Asks the person to confirm in the app before it acts. Send, fire or shoot one or more active Email Cannons to one contact with a portal login, after the person confirms.",
+      "title": "Send Email Cannon Template",
+      "description": "Asks the person to confirm in the app before it acts. Send, fire or shoot one or more active Email Cannons, saved email templates, to one contact with a portal login.",
       "annotations": {
-        "title": "Send Email Cannon",
+        "title": "Send Email Cannon Template",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": false,
@@ -2433,10 +2433,10 @@
     },
     {
       "name": "test_send_email_cannon",
-      "title": "Send Email Cannon Test",
-      "description": "Asks the person to confirm in the app before it acts. Send a test of an Email Cannon to the people given, or to the person asking when none are given.",
+      "title": "Send Email Cannon Template Test",
+      "description": "Asks the person to confirm in the app before it acts. Send a test of an Email Cannon, a saved email template, to the addresses given, or to the person asking when none are.",
       "annotations": {
-        "title": "Send Email Cannon Test",
+        "title": "Send Email Cannon Template Test",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": false,
@@ -2493,10 +2493,10 @@
     },
     {
       "name": "unlink_re_task",
-      "title": "Unlink RE: Task",
-      "description": "Asks the person to confirm in the app before it acts. Unlink an RE: Task from the CRM contact or company it is about; the task keeps its title.",
+      "title": "Unlink RE: Task from Contact",
+      "description": "Asks the person to confirm in the app before it acts. Unlink an RE: Task, a task related to a CRM contact or company, from that contact or company; it keeps its title.",
       "annotations": {
-        "title": "Unlink RE: Task",
+        "title": "Unlink RE: Task from Contact",
         "readOnlyHint": false,
         "destructiveHint": true,
         "idempotentHint": true,

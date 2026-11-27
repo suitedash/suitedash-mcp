@@ -102,7 +102,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `archive_work_request` | Archive Work Request | Archive a client's work request, moving it off the Work Requests list; restore_work_request brings it back. | Changes data, asks first |
 | `bill_task` | Bill Task | Bill a task: put it on a new or draft invoice or accumulating generator as a $0.00 line; takes no amount or due date. | Changes data, asks first |
 | `comment_on_task` | Comment on Task | Post a comment on a task, named by its title or id; its assignee and followers are told. | Changes data, asks first |
-| `convert_task_to_re_task` | Convert Task to RE: Task | Make a task an RE: Task about a CRM contact or company: it is retitled "RE: name:" and leaves its project. | Changes data, asks first |
+| `convert_task_to_re_task` | Convert Task to Contact RE: Task | Make a task an RE: Task, a task related to a CRM contact or company: it is retitled "RE: name:" and leaves its project. | Changes data, asks first |
 | `convert_work_request_to_estimate` | Convert Work Request to Estimate | Convert a work request into a new or existing estimate or quote; items become lines, and the client may be emailed. | Changes data, asks first |
 | `convert_work_request_to_invoice` | Convert Work Request to Invoice | Convert a work request into a new or existing invoice; items become lines, and the client may be emailed a link. | Changes data, asks first |
 | `convert_work_request_to_project` | Convert Work Request to Project | Convert a work request into a new or existing project; items become tasks, and the client may be emailed a link. | Changes data, asks first |
@@ -133,7 +133,7 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 | `set_task_recurrence` | Set Task Recurrence | Make a task recur, repeat or come back every day, week, month or year (daily, weekly, monthly, yearly), or change it. | Changes data, asks first |
 | `set_task_time_spent` | Set Task Time Spent | Set a task's Time Spent to the hours given, or to the time tracked on it by its timers. | Changes data, asks first |
 | `undo_task_change` | Undo Task Change | Take back the person's latest change of a task, as its Undo does, unless someone changed it again since. | Changes data, asks first |
-| `unlink_re_task` | Unlink RE: Task | Unlink an RE: Task from the CRM contact or company it is about; the task keeps its title. | Changes data, asks first |
+| `unlink_re_task` | Unlink RE: Task from Contact | Unlink an RE: Task, a task related to a CRM contact or company, from that contact or company; it keeps its title. | Changes data, asks first |
 | `unlink_task_start_date` | Unlink Task Start Date | Unlink a task's Start Date from the other task's Due Date it follows; the task keeps its dates. | Changes data, asks first |
 | `update_project` | Update Project | Change a project's details, its Custom Fields included. Only the fields you name are touched; the client is not one. | Changes data, asks first |
 | `update_subtask` | Update Subtask | Tick, reopen, rename or reassign one subtask (a checklist step) of a task, each named by its title or id. | Changes data, asks first |
@@ -251,17 +251,17 @@ Kind: **Read** finds or reads something and changes nothing. **Changes data** cr
 
 | Name | Title | What it does | Kind |
 |---|---|---|---|
-| `activate_email_cannon` | Activate Email Cannon | Activate a draft Email Cannon so it can be sent to contacts; this emails no one, and an active one is left as it is. | Changes data, asks first |
+| `activate_email_cannon` | Activate Email Cannon Template | Activate a draft Email Cannon, a saved email template, so it can be sent; emails no one; an active one is left as it is. | Changes data, asks first |
 | `add_to_audience` | Add People to Audience | Add CRM contacts or plain email addresses to an audience; they start the audience's autoresponders. | Changes data, asks first |
 | `create_audience` | Create Audience | Create an empty marketing audience with a name. It reaches nobody until people are added to it. | Changes data, asks first |
 | `find_audience` | Find Audiences | Find or list audiences by name with subscriber counts, as the Audiences list shows them. Use before an audience id. | Read |
 | `find_campaign` | Find Campaigns | Find or list marketing campaigns by title or status, as the Campaigns list shows them. Use before a campaign id. | Read |
-| `find_email_cannon` | Find Email Cannons | Find or list Email Cannons by title or status, as the Email Cannons list shows them. Use before a cannon id. | Read |
+| `find_email_cannon` | Find Email Cannon Templates | Find or list Email Cannons, saved email templates sent to single contacts, by title or status. Use before a cannon id. | Read |
 | `read_audience` | Get Audience Details | Read one audience: how many subscribed or unsubscribed, how much it has grown lately, and the autoresponders it starts. | Read |
 | `read_campaign` | Get Campaign Details | Read one marketing campaign: its status, schedule, how far its sending has got and whether it was saved for sending. | Read |
 | `send_campaign` | Send Campaign | Send a draft campaign now, or schedule it for a stated time, to the audiences named; a sent one never goes again. | Changes data, asks first |
-| `send_email_cannon` | Send Email Cannon | Send, fire or shoot one or more active Email Cannons to one contact with a portal login, after the person confirms. | Changes data, asks first |
-| `test_send_email_cannon` | Send Email Cannon Test | Send a test of an Email Cannon to the people given, or to the person asking when none are given. | Changes data, asks first |
+| `send_email_cannon` | Send Email Cannon Template | Send, fire or shoot one or more active Email Cannons, saved email templates, to one contact with a portal login. | Changes data, asks first |
+| `test_send_email_cannon` | Send Email Cannon Template Test | Send a test of an Email Cannon, a saved email template, to the addresses given, or to the person asking when none are. | Changes data, asks first |
 
 ## Checklists and flows
 
